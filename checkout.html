@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | NanizTreate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js"></script>
+
+      <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <style>
+        /* keep styling consistent with site */
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation (kept visually consistent) -->
+   <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 d-flex flex items-center space-x-2">
+                        <!-- <img class="h-12 w-auto" src="http://static.photos/food/200x200/1" alt="Savory Bites Logo"> -->
+                        <span class="text-xl font-bold text-gray-800">LAW-WILLS<b class="text-skyblue-400" style="color: skyblue;">ENTERPRISE</b></span>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-4">
+                            <a href="index.html" class="text-blue-500 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                            <a href="menu.html" class="text-gray-700 hover:text-gray-500 px-3 py-2 rounded-md text-sm font-medium" style="color: skyblue;">Menu</a>
+                            <a href="events.html" class="text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">Events</a>
+                            <a href="about.html" class="text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">About Us</a>
+                            <a href="testimonial.html" class="text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">Testimonials</a>
+                            <a href="contact.html" class="text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-4 flex items-center md:ml-6">
+                        <button id="cart-button" class="bg-orange-500 hover:bg-pink-600 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300" onclick="localStorage.setItem('cart', JSON.stringify(cart)); window.location.href='checkout.html';" style="background-color: skyblue;">
+                            <i data-feather="shopping-cart" class="inline mr-1"></i> Cart (<span id="cart-count">0</span>)
+                        </button>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-orange-500 focus:outline-none">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-orange-500 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="menu.html" class="text-gray-700 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium">Menu</a>
+                <a href="events.html" class="text-gray-700 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium">Events</a>
+                <a href="about.html" class="text-gray-700 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium">About Us</a>
+                <a href="testimonials.html" class="text-gray-700 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium">Testimonials</a>
+                <a href="contact.html" class="text-gray-700 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+                <button id="mobile-cart-button" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-md text-sm font-medium w-full mt-2" style="background-color: skyblue;">
+                    <i data-feather="shopping-cart" class="inline mr-1"></i> Cart (<span id="mobile-cart-count">0</span>)
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <h1 class="text-3xl font-bold text-gray-900 mb-6">Checkout</h1>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Cart summary -->
+            <section class="bg-white p-6 rounded-lg shadow">
+                <h2 class="text-xl font-semibold mb-4">Your Order</h2>
+                <div id="cart-items" class="space-y-4">
+                    <!-- items injected here -->
+                </div>
+
+                <div id="empty-cart" class="text-center text-gray-500 py-12">
+                    Your cart is empty.
+                </div>
+
+                <div class="mt-6 border-t pt-4">
+                    <div class="flex justify-between text-gray-700 mb-2">
+                        <span>Subtotal</span>
+                        <span id="cart-subtotal">₦0</span>
+                    </div>
+                    <div class="flex justify-between text-gray-700 mb-2">
+                        <span>Delivery</span>
+                        <span id="cart-delivery">₦1,500</span>
+                    </div>
+                    <div class="flex justify-between text-gray-900 font-bold text-lg">
+                        <span>Total</span>
+                        <span id="cart-total">₦0</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Checkout form -->
+            <section class="bg-white p-6 rounded-lg shadow">
+                <h2 class="text-xl font-semibold mb-4">Delivery & Contact Information</h2>
+                <form id="checkout-form" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Full Name</label>
+                        <input id="full-name" type="text" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:border-orange-500 focus:ring-orange-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Phone Number</label>
+                        <input id="phone" type="tel" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:border-orange-500 focus:ring-orange-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Email Address</label>
+                        <input id="email" type="email" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:border-orange-500 focus:ring-orange-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">House Address</label>
+                        <textarea id="address" rows="3" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:border-orange-500 focus:ring-orange-500"></textarea>
+                    </div>
+
+                    <div class="pt-4">
+                        <button type="submit" id="place-order" class="w-full bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-md font-medium">Place Order</button>
+                    </div>
+
+                    <div id="form-message" class="hidden text-center text-sm mt-2"></div>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        // Wait for DOM to be fully loaded before initializing
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize EmailJS safely
+            if (typeof emailjs !== 'undefined') {
+                emailjs.init('vMPoS5H-LDiU0uqxn'); // Replace with your EmailJS Public Key
+            }
+
+            AOS.init({ duration: 800, easing: 'ease-in-out' });
+            feather.replace();
+
+            // Mobile menu toggle (kept consistent)
+            const mobileButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileButton && mobileMenu) {
+                mobileButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+            }
+
+            // Cart logic with localStorage fallback
+            let cart = [];
+            try {
+                const cartData = localStorage.getItem('cart');
+                cart = cartData ? JSON.parse(cartData) : [];
+                console.log('Cart loaded from localStorage:', cart);
+            } catch (e) {
+                console.warn('localStorage access blocked:', e);
+                console.log('Using in-memory cart instead');
+                cart = [];
+            }
+            const DELIVERY = 1500;
+
+            function formatNaira(n) {
+                return '₦' + n.toLocaleString();
+            }
+
+            function saveCart() {
+                try {
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                } catch (e) {
+                    console.warn('Could not save cart to localStorage:', e);
+                    // Cart still exists in memory, just won't persist
+                }
+                // update any cart-count elements on the page if present
+                const countEls = document.querySelectorAll('#cart-count, #mobile-cart-count');
+                const count = cart.reduce((s, it) => s + (it.quantity || 0), 0);
+                countEls.forEach(el => el.textContent = count);
+            }
+
+            function renderCart() {
+                const container = document.getElementById('cart-items');
+                const empty = document.getElementById('empty-cart');
+                container.innerHTML = '';
+
+                if (!cart || cart.length === 0) {
+                    empty.classList.remove('hidden');
+                    document.getElementById('cart-subtotal').textContent = formatNaira(0);
+                    document.getElementById('cart-total').textContent = formatNaira(0);
+                    console.log('Cart is empty'); // Debug log
+                    return;
+                }
+
+                empty.classList.add('hidden');
+
+                let subtotal = 0;
+
+                cart.forEach((item, idx) => {
+                    const itemTotal = (item.price || 0) * (item.quantity || 1);
+                    subtotal += itemTotal;
+
+                    const card = document.createElement('div');
+                    card.className = 'border rounded p-4 bg-gray-50';
+                    card.innerHTML = `
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+                            <div class="flex-shrink-0">
+                                <img src="${item.image || 'http://static.photos/food/200x200/1'}" alt="${item.name}" class="w-24 h-24 object-cover rounded" onerror="this.src='http://static.photos/food/200x200/1'">
+                            </div>
+                            <div class="flex-grow">
+                                <div class="font-semibold text-lg">${item.name}</div>
+                                <div class="text-sm text-gray-600">${formatNaira(item.price)} each</div>
+                            </div>
+                            <div class="flex items-center gap-2 flex-wrap justify-between">
+                                <button data-action="minus" data-id="${item.id}" class="minus-btn bg-gray-200 hover:bg-gray-300 text-gray-800 rounded px-2 py-1 inline-flex items-center text-sm">
+                                    <i data-feather="minus" class="w-4 h-4"></i>
+                                </button>
+                                <span class="text-sm font-medium min-w-8 text-center">x<span class="item-qty">${item.quantity}</span></span>
+                                <button data-action="plus" data-id="${item.id}" class="plus-btn bg-green-500 hover:bg-green-600 text-white rounded px-2 py-1 inline-flex items-center text-sm">
+                                    <i data-feather="plus" class="w-4 h-4"></i>
+                                </button>
+                                <div class="font-semibold text-right min-w-20">${formatNaira(itemTotal)}</div>
+                                <button data-action="remove" data-id="${item.id}" class="remove-btn text-red-500 hover:text-red-700 inline-flex items-center">
+                                    <i data-feather="trash-2" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+                        </div>
+                    `;
+
+                    container.appendChild(card);
+                });
+
+                document.getElementById('cart-subtotal').textContent = formatNaira(subtotal);
+                document.getElementById('cart-total').textContent = formatNaira(subtotal + DELIVERY);
+
+                // re-render feather icons inside dynamic content
+                feather.replace();
+
+                // attach listeners
+                document.querySelectorAll('[data-action="plus"]').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const id = btn.getAttribute('data-id');
+                        const it = cart.find(i => i.id === id);
+                        if (it) {
+                            it.quantity = (it.quantity || 0) + 1;
+                            saveCart();
+                            renderCart();
+                        }
+                    });
+                });
+
+                // minus/decrement button
+                document.querySelectorAll('[data-action="minus"]').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const id = btn.getAttribute('data-id');
+                        const it = cart.find(i => i.id === id);
+                        if (it) {
+                            it.quantity = (it.quantity || 1) - 1;
+                            if (it.quantity <= 0) {
+                                cart = cart.filter(i => i.id !== id);
+                            }
+                            saveCart();
+                            renderCart();
+                        }
+                    });
+                });
+
+                document.querySelectorAll('[data-action="remove"]').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const id = btn.getAttribute('data-id');
+                        cart = cart.filter(i => i.id !== id);
+                        saveCart();
+                        renderCart();
+                    });
+                });
+            }
+
+            // Initial render
+            renderCart();
+            saveCart();
+
+            // Listen for cart changes from other tabs/windows and update in real-time
+            window.addEventListener('storage', (e) => {
+                if (e.key === 'cart') {
+                    try {
+                        cart = JSON.parse(e.newValue) || [];
+                    } catch (err) {
+                        cart = [];
+                    }
+                    renderCart();
+                    saveCart();
+                }
+            });
+
+            // Mobile cart button handler
+            const mobileCartBtn = document.getElementById('mobile-cart-button');
+            if (mobileCartBtn) {
+                mobileCartBtn.addEventListener('click', function() {
+                    try {
+                        localStorage.setItem('cart', JSON.stringify(cart));
+                    } catch (ex) {
+                        console.warn('Could not save cart:', ex);
+                    }
+                    // Reload to ensure cart is displayed
+                    window.location.href = 'checkout.html';
+                });
+            }
+
+            // Checkout form handling with EmailJS
+            const form = document.getElementById('checkout-form');
+            const msg = document.getElementById('form-message');
+
+            function validateEmail(email) {
+                return /\S+@\S+\.\S+/.test(email);
+            }
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // basic validation
+                const name = document.getElementById('full-name').value.trim();
+                const phone = document.getElementById('phone').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const address = document.getElementById('address').value.trim();
+
+                if (!name || !phone || !email || !address) {
+                    msg.className = 'text-red-600';
+                    msg.textContent = 'Please fill all required fields.';
+                    msg.classList.remove('hidden');
+                    return;
+                }
+
+                if (!validateEmail(email)) {
+                    msg.className = 'text-red-600';
+                    msg.textContent = 'Please enter a valid email address.';
+                    msg.classList.remove('hidden');
+                    return;
+                }
+
+                if (!cart || cart.length === 0) {
+                    msg.className = 'text-red-600';
+                    msg.textContent = 'Your cart is empty. Add items before placing an order.';
+                    msg.classList.remove('hidden');
+                    return;
+                }
+
+                // snapshot the cart so we can clear UI immediately but still send order details
+                const cartSnapshot = JSON.parse(JSON.stringify(cart));
+
+                // immediately clear cart in UI and storage
+                try {
+                    cart = [];
+                    saveCart();
+                    renderCart();
+                } catch (ex) {
+                    console.warn('Could not clear cart immediately:', ex);
+                }
+
+                const placeBtn = document.getElementById('place-order');
+                const originalBtnHTML = placeBtn.innerHTML;
+                // show loading state
+                try {
+                    placeBtn.disabled = true;
+                    placeBtn.innerHTML = 'Processing...';
+                } catch (ex) {
+                    // ignore
+                }
+
+                // build order from snapshot
+                const subtotal = cartSnapshot.reduce((s, it) => s + (it.price || 0) * (it.quantity || 0), 0);
+                const total = subtotal + DELIVERY;
+                const order = {
+                    id: 'ORD-' + Date.now(),
+                    customer: { name, phone, email, address },
+                    items: cartSnapshot,
+                    subtotal: subtotal,
+                    delivery: DELIVERY,
+                    total: total,
+                    createdAt: new Date().toISOString()
+                };
+
+                // Format items for email
+                let itemsHTML = '<table style="width:100%; border-collapse: collapse; margin: 10px 0;">';
+                itemsHTML += '<tr style="border-bottom: 1px solid #ddd;"><th style="text-align:left; padding:8px;">Product</th><th style="text-align:center; padding:8px;">Qty</th><th style="text-align:right; padding:8px;">Price</th><th style="text-align:right; padding:8px;">Total</th></tr>';
+                
+                cartSnapshot.forEach(item => {
+                    const itemTotal = (item.price || 0) * (item.quantity || 0);
+                    itemsHTML += `<tr style="border-bottom: 1px solid #eee;">\n                        <td style="padding:8px;"><strong>${item.name}</strong><br><img src="${item.image || 'N/A'}" style="width:50px; height:50px; margin-top:5px;" alt="${item.name}"></td>\n                        <td style="text-align:center; padding:8px;">${item.quantity}</td>\n                        <td style="text-align:right; padding:8px;">₦${(item.price || 0).toLocaleString()}</td>\n                        <td style="text-align:right; padding:8px;">₦${itemTotal.toLocaleString()}</td>\n                    </tr>`;
+                });
+                
+                itemsHTML += '<tr style="font-weight:bold; background-color:#f9f9f9;"><td colspan="3" style="text-align:right; padding:8px;">Subtotal:</td><td style="text-align:right; padding:8px;">₦' + subtotal.toLocaleString() + '</td></tr>';
+                itemsHTML += '<tr style="font-weight:bold; background-color:#f9f9f9;"><td colspan="3" style="text-align:right; padding:8px;">Delivery:</td><td style="text-align:right; padding:8px;">₦' + DELIVERY.toLocaleString() + '</td></tr>';
+                itemsHTML += '<tr style="font-weight:bold; background-color:#fff3cd; font-size:1.1em;"><td colspan="3" style="text-align:right; padding:8px;">Total:</td><td style="text-align:right; padding:8px;">₦' + total.toLocaleString() + '</td></tr>';
+                itemsHTML += '</table>';
+
+                // send email in background if available (do not block UI)
+                if (typeof emailjs !== 'undefined') {
+                    const templateParams = {
+                        to_email: 'wpatience2025@gmail.com', // Replace with your email
+                        order_id: order.id,
+                        customer_name: name,
+                        customer_email: email,
+                        customer_phone: phone,
+                        customer_address: address,
+                        items_html: itemsHTML,
+                        subtotal: '₦' + subtotal.toLocaleString(),
+                        delivery: '₦' + DELIVERY.toLocaleString(),
+                        total: '₦' + total.toLocaleString(),
+                        order_date: new Date().toLocaleDateString(),
+                        reply_to: email
+                    };
+
+                    emailjs.send('service_xlc1q5r', 'template_wqkkv16', templateParams)
+                        .then(function(response) {
+                            console.log('Email sent successfully:', response);
+                        }, function(error) {
+                            console.error('EmailJS error:', error);
+                        });
+                } else {
+                    console.warn('EmailJS not loaded, order will be recorded locally only');
+                }
+
+                // show success message after a short loading period (per request)
+                setTimeout(() => {
+                    // complete order flow (saves lastOrder and shows message)
+                    completeOrder(order);
+                    // restore button state if needed
+                    try {
+                        placeBtn.innerHTML = originalBtnHTML;
+                        placeBtn.disabled = false;
+                    } catch (ex) {}
+                }, 2000);
+            });
+
+            function completeOrder(order) {
+                try {
+                    localStorage.setItem('lastOrder', JSON.stringify(order));
+                } catch (e) {
+                    console.warn('Could not save order to localStorage:', e);
+                }
+
+                // clear cart
+                cart = [];
+                saveCart();
+                renderCart();
+
+                // show success message (per user's requested wording)
+                msg.className = 'text-green-600';
+                msg.textContent = 'we have recieved your order we will get back to you shortly';
+                msg.classList.remove('hidden');
+
+                // optionally redirect after 3s
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 3000);
+            }
+        });
+    </script>
+</body>
+</html>

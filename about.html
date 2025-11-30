@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | NanizTreate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .about-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('http://static.photos/food/1200x630/8');
+            background-size: cover;
+            background-position: center;
+        }
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .timeline-item:not(:last-child):after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -50px;
+            width: 2px;
+            height: 50px;
+            background: #f97316;
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Navigation -->
+   <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 d-flex flex items-center space-x-2">
+                        <!-- <img class="h-12 w-auto" src="http://static.photos/food/200x200/1" alt="Savory Bites Logo"> -->
+                        <span class="text-xl font-bold text-gray-800">LAW-WILLS<b class="text-skyblue-400" style="color: skyblue;">ENTERPRISE</b></span>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-4">
+                            <a href="index.html" class="text-blue-500 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                            <a href="menu.html" class="text-gray-700 hover:text-gray-500 px-3 py-2 rounded-md text-sm font-medium" style="color: skyblue;">Menu</a>
+                            <a href="events.html" class="text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">Events</a>
+                            <a href="about.html" class="text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">About Us</a>
+                            <a href="testimonial.html" class="text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">Testimonials</a>
+                            <a href="contact.html" class="text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-4 flex items-center md:ml-6">
+                        <button id="cart-button" class="bg-orange-500 hover:bg-pink-600 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300" onclick="localStorage.setItem('cart', JSON.stringify(cart)); window.location.href='checkout.html';" style="background-color: skyblue;">
+                            <i data-feather="shopping-cart" class="inline mr-1"></i> Cart (<span id="cart-count">0</span>)
+                        </button>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-orange-500 focus:outline-none">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-orange-500 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="menu.html" class="text-gray-700 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium">Menu</a>
+                <a href="events.html" class="text-gray-700 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium">Events</a>
+                <a href="about.html" class="text-gray-700 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium">About Us</a>
+                <a href="testimonials.html" class="text-gray-700 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium">Testimonials</a>
+                <a href="contact.html" class="text-gray-700 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+                <button id="mobile-cart-button" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-md text-sm font-medium w-full mt-2" style="background-color: skyblue;">
+                    <i data-feather="shopping-cart" class="inline mr-1"></i> Cart (<span id="mobile-cart-count">0</span>)
+                </button>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="about-hero text-white py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Our Story</h1>
+            <p class="text-xl md:text-2xl mb-8">From humble beginnings to creating unforgettable culinary experiences</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <img src="http://static.photos/food/640x360/9" alt="About NanizTreate" class="rounded-lg shadow-xl w-full">
+                </div>
+                <div data-aos="fade-left">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Who We Are</h2>
+                    <p class="text-gray-600 mb-4">NanizTreate is a premium catering and event planning company that began as a small home-based business in 2010. Founded by Nani and Zainab, two passionate culinary enthusiasts, we've grown into one of Lagos' most trusted names in small chops and event coordination.</p>
+                    <p class="text-gray-600 mb-6">Our journey started with a simple mission: to bring people together through exceptional food and memorable experiences. Today, we're proud to serve hundreds of clients annually, from intimate family gatherings to large corporate events.</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-orange-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-orange-600 mb-2">Our Mission</h3>
+                            <p class="text-gray-700">To create unforgettable culinary experiences through passion, creativity, and attention to detail.</p>
+                        </div>
+                        <div class="bg-orange-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-orange-600 mb-2">Our Vision</h3>
+                            <p class="text-gray-700">To be Nigeria's premier catering and event planning brand known for excellence and innovation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Core Values</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">The principles that guide everything we do</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Value 1 -->
+                <div class="bg-white p-8 rounded-lg shadow-md text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="heart" class="text-orange-500 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Passion</h3>
+                    <p class="text-gray-600">We pour our hearts into every dish and event, ensuring each creation reflects our love for what we do.</p>
+                </div>
+                <!-- Value 2 -->
+                <div class="bg-white p-8 rounded-lg shadow-md text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="star" class="text-orange-500 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Excellence</h3>
+                    <p class="text-gray-600">We never compromise on quality, from ingredient selection to final presentation and service.</p>
+                </div>
+                <!-- Value 3 -->
+                <div class="bg-white p-8 rounded-lg shadow-md text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="users" class="text-orange-500 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Community</h3>
+                    <p class="text-gray-600">We believe in the power of food to bring people together and strengthen relationships.</p>
+                </div>
+                <!-- Value 4 -->
+                <div class="bg-white p-8 rounded-lg shadow-md text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="refresh-cw" class="text-orange-500 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Innovation</h3>
+                    <p class="text-gray-600">We continuously evolve our menu and services to stay ahead of culinary trends.</p>
+                </div>
+                <!-- Value 5 -->
+                <div class="bg-white p-8 rounded-lg shadow-md text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="check-circle" class="text-orange-500 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Integrity</h3>
+                    <p class="text-gray-600">We maintain honesty and transparency in all our business dealings and client relationships.</p>
+                </div>
+                <!-- Value 6 -->
+                <div class="bg-white p-8 rounded-lg shadow-md text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="smile" class="text-orange-500 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Joy</h3>
+                    <p class="text-gray-600">We believe celebrations should be joyful, and we strive to create that atmosphere in every event.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Journey</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Milestones that shaped NanizTreate</p>
+            </div>
+            <div class="relative">
+                <!-- Timeline line -->
+                <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-orange-100 transform -translate-x-1/2"></div>
+                
+                <!-- Timeline items -->
+                <div class="space-y-16 md:space-y-8">
+                    <!-- Item 1 -->
+                    <div class="relative timeline-item" data-aos="fade-up">
+                        <div class="md:flex items-center">
+                            <div class="md:w-1/2 md:pr-12 md:text-right mb-4 md:mb-0">
+                                <h3 class="text-xl font-bold text-gray-900">2010: Humble Beginnings</h3>
+                                <p class="text-orange-500">Founded</p>
+                            </div>
+                            <div class="hidden md:block w-8 h-8 rounded-full bg-orange-500 absolute left-1/2 transform -translate-x-1/2"></div>
+                            <div class="md:w-1/2 md:pl-12">
+                                <p class="text-gray-600">Started as a home-based small chops business serving friends and family in Lagos.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 2 -->
+                    <div class="relative timeline-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="md:flex items-center">
+                            <div class="md:w-1/2 md:pr-12 md:text-right mb-4 md:mb-0">
+                                <h3 class="text-xl font-bold text-gray-900">2013: First Commercial Kitchen</h3>
+                                <p class="text-orange-500">Expansion</p>
+                            </div>
+                            <div class="hidden md:block w-8 h-8 rounded-full bg-orange-500 absolute left-1/2 transform -translate-x-1/2"></div>
+                            <div class="md:w-1/2 md:pl-12">
+                                <p class="text-gray-600">Opened our first commercial kitchen in Victoria Island to meet growing demand.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 3 -->
+                    <div class="relative timeline-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="md:flex items-center">
+                            <div class="md:w-1/2 md:pr-12 md:text-right mb-4 md:mb-0">
+                                <h3 class="text-xl font-bold text-gray-900">2016: Event Planning Services</h3>
+                                <p class="text-orange-500">Diversification</p>
+                            </div>
+                            <div class="hidden md:block w-8 h-8 rounded-full bg-orange-500 absolute left-1/2 transform -translate-x-1/2"></div>
+                            <div class="md:w-1/2 md:pl-12">
+                                <p class="text-gray-600">Expanded into full event planning services to complement our catering expertise.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 4 -->
+                    <div class="relative timeline-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="md:flex items-center">
+                            <div class="md:w-1/2 md:pr-12 md:text-right mb-4 md:mb-0">
+                                <h3 class="text-xl font-bold text-gray-900">2019: Award Recognition</h3>
+                                <p class="text-orange-500">Achievement</p>
+                            </div>
+                            <div class="hidden md:block w-8 h-8 rounded-full bg-orange-500 absolute left-1/2 transform -translate-x-1/2"></div>
+                            <div class="md:w-1/2 md:pl-12">
+                                <p class="text-gray-600">Received "Best Catering Service in Lagos" at the Nigerian Hospitality Awards.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 5 -->
+                    <div class="relative" data-aos="fade-up" data-aos-delay="400">
+                        <div class="md:flex items-center">
+                            <div class="md:w-1/2 md:pr-12 md:text-right mb-4 md:mb-0">
+                                <h3 class="text-xl font-bold text-gray-900">2023: Current Operations</h3>
+                                <p class="text-orange-500">Today</p>
+                            </div>
+                            <div class="hidden md:block w-8 h-8 rounded-full bg-orange-500 absolute left-1/2 transform -translate-x-1/2"></div>
+                            <div class="md:w-1/2 md:pl-12">
+                                <p class="text-gray-600">Now serving over 500 events annually with a team of 35 dedicated professionals.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Meet Our Team</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">The passionate individuals behind NanizTreate</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Team Member 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md team-card transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <img src="http://static.photos/people/640x360/20" alt="Nani Adebayo" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Nani Adebayo</h3>
+                        <p class="text-orange-500 font-medium mb-3">Co-Founder & Head Chef</p>
+                        <p class="text-gray-600 mb-4">With over 15 years of culinary experience, Nani brings creativity and precision to every dish.</p>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-gray-400 hover:text-orange-500">
+                                <i data-feather="linkedin"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-orange-500">
+                                <i data-feather="twitter"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-orange-500">
+                                <i data-feather="instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md team-card transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <img src="http://static.photos/people/640x360/21" alt="Zainab Mohammed" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Zainab Mohammed</h3>
+                        <p class="text-orange-500 font-medium mb-3">Co-Founder & Event Director</p>
+                        <p class="text-gray-600 mb-4">Zainab's exceptional organizational skills ensure every event runs seamlessly from start to finish.</p>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-gray-400 hover:text-orange-500">
+                                <i data-feather="linkedin"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-orange-500">
+                                <i data-feather="twitter"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-orange-500">
+                                <i data-feather="instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md team-card transition duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <img src="http://static.photos/people/640x360/22" alt="Tunde Okafor" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Tunde Okafor</h3>
+                        <p class="text-orange-500 font-medium mb-3">Head of Operations</p>
+                        <p class="text-gray-600 mb-4">Tunde oversees logistics and ensures our services meet the highest standards of quality and efficiency.</p>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-gray-400 hover:text-orange-500">
+                                <i data-feather="linkedin"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-orange-500">
+                                <i data-feather="twitter"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-orange-500">
+                                <i data-feather="instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 4 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md team-card transition duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <img src="http://static.photos/people/640x360/23" alt="Amina Yusuf" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Amina Yusuf</h3>
+                        <p class="text-orange-500 font-medium mb-3">Creative Director</p>
+                        <p class="text-gray-600 mb-4">Amina's artistic vision transforms ordinary spaces into extraordinary event settings.</p>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-gray-400 hover:text-orange-500">
+                                <i data-feather="linkedin"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-orange-500">
+                                <i data-feather="twitter"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-orange-500">
+                                <i data-feather="instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-orange-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <!-- Stat 1 -->
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-4xl md:text-5xl font-bold mb-2">13+</div>
+                    <div class="text-lg">Years Experience</div>
+                </div>
+                <!-- Stat 2 -->
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-4xl md:text-5xl font-bold mb-2">2,500+</div>
+                    <div class="text-lg">Events Catered</div>
+                </div>
+                <!-- Stat 3 -->
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-4xl md:text-5xl font-bold mb-2">35+</div>
+                    <div class="text-lg">Team Members</div>
+                </div>
+                <!-- Stat 4 -->
+                <div data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-4xl md:text-5xl font-bold mb-2">98%</div>
+                    <div class="text-lg">Client Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-orange-50 rounded-xl p-8 md:p-12 text-center" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Ready to Plan Your Next Event?</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-8">Let us bring your vision to life with our exceptional catering and event planning services.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="contact.html" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-md text-lg font-medium inline-block transition duration-300">
+                        Contact Us
+                    </a>
+                    <a href="tel:+2348123456789" class="border border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-3 rounded-md text-lg font-medium inline-block transition duration-300">
+                        <i data-feather="phone" class="inline mr-2"></i> Call Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Newsletter -->
+    <section class="py-16 bg-blue-500 text-white" style="background-color: skyblue;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
+            <h2 class="text-3xl font-bold mb-4">Join Our Newsletter</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Subscribe to get updates on new menu items, special offers, and event planning tips</p>
+            <form class="max-w-md mx-auto flex">
+                <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-l-md focus:outline-none text-gray-900">
+                <button type="submit" class="bg-gray-900 hover:bg-gray-800 px-6 py-3 rounded-r-md font-medium transition duration-300">
+                    Subscribe
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <!-- <img src="http://static.photos/food/200x200/1" alt="Savory Bites Logo" class="h-12 mb-4"> -->
+                    <p class="text-gray-400 mb-4">Premium small chops and professional event planning services for all occasions.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white" style="color: white;">
+                            <i data-feather="facebook" style="color: white;"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white" style="color: white;">
+                            <i data-feather="instagram" style="color: white;"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white" style="color: white;">
+                            <i data-feather="twitter" style=""></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white" style="color: white;">
+                            <i data-feather="tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4" style="color: skyblue;">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="menu.html" class="text-gray-400 hover:text-white">Menu</a></li>
+                        <li><a href="events.html" class="text-gray-400 hover:text-white">Events</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="testimonials.html" class="text-gray-400 hover:text-white">Testimonials</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4" style="color: skyblue;">Contact Us</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i data-feather="map-pin" class="mr-2 mt-1" style="color: white;"></i>
+                            <span>123 Food Street, Victoria Island, Lagos</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="phone" class="mr-2 mt-1" style="color: white;"></i>
+                            <span>+234 812 345 6789</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="mail" class="mr-2 mt-1" style="color: white;"></i>
+                            <span>info@savorybites.com</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4" style="color: skyblue;">Opening Hours</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex justify-between">
+                            <span>Monday - Friday</span>
+                            <span>8am - 8pm</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Saturday</span>
+                            <span>9am - 10pm</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Sunday</span>
+                            <span>10am - 6pm</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400" style="color: skyblue;">
+                <p>&copy; 2025 Stavytech. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Initialize feather icons
+        feather.replace();
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Planning | NanizTreate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .event-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('http://static.photos/event/1200x630/5');
+            background-size: cover;
+            background-position: center;
+        }
+        .package-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Navigation -->
+   <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 d-flex flex items-center space-x-2">
+                        <!-- <img class="h-12 w-auto" src="http://static.photos/food/200x200/1" alt="Savory Bites Logo"> -->
+                        <span class="text-xl font-bold text-gray-800">LAW-WILLS<b class="text-skyblue-400" style="color: skyblue;">ENTERPRISE</b></span>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-4">
+                            <a href="index.html" class="text-blue-500 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                            <a href="menu.html" class="text-gray-700 hover:text-gray-500 px-3 py-2 rounded-md text-sm font-medium" style="color: skyblue;">Menu</a>
+                            <a href="events.html" class="text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">Events</a>
+                            <a href="about.html" class="text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">About Us</a>
+                            <a href="testimonial.html" class="text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">Testimonials</a>
+                            <a href="contact.html" class="text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-4 flex items-center md:ml-6">
+                        <button id="cart-button" class="bg-orange-500 hover:bg-pink-600 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300" onclick="localStorage.setItem('cart', JSON.stringify(cart)); window.location.href='checkout.html';" style="background-color: skyblue;">
+                            <i data-feather="shopping-cart" class="inline mr-1"></i> Cart (<span id="cart-count">0</span>)
+                        </button>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-orange-500 focus:outline-none">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-orange-500 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="menu.html" class="text-gray-700 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium">Menu</a>
+                <a href="events.html" class="text-gray-700 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium">Events</a>
+                <a href="about.html" class="text-gray-700 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium">About Us</a>
+                <a href="testimonials.html" class="text-gray-700 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium">Testimonials</a>
+                <a href="contact.html" class="text-gray-700 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+                <button id="mobile-cart-button" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-md text-sm font-medium w-full mt-2" style="background-color: skyblue;">
+                    <i data-feather="shopping-cart" class="inline mr-1"></i> Cart (<span id="mobile-cart-count">0</span>)
+                </button>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="event-hero text-white py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Exceptional Event Planning</h1>
+            <p class="text-xl md:text-2xl mb-8">Creating memorable experiences with flawless execution</p>
+            <a href="#contact-form" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-md text-lg font-medium inline-block transition duration-300">
+                Get a Quote
+            </a>
+        </div>
+    </section>
+
+    <!-- Event Types -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Events We Specialize In</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">From intimate gatherings to grand celebrations, we handle every detail</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Wedding -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <img src="http://static.photos/event/640x360/10" alt="Wedding" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-orange-100 p-2 rounded-full mr-3">
+                                <i data-feather="heart" class="text-orange-500"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900">Weddings</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Create your dream wedding with our comprehensive planning services, from venue selection to catering and decor.</p>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Full wedding coordination</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Custom menu planning</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Venue decoration</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Corporate -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <img src="http://static.photos/office/640x360/15" alt="Corporate Event" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-orange-100 p-2 rounded-full mr-3">
+                                <i data-feather="briefcase" class="text-orange-500"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900">Corporate Events</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Professional event planning for conferences, product launches, and corporate gatherings that impress.</p>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>AV equipment setup</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Professional catering</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Branded decor</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Social -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <img src="http://static.photos/event/640x360/20" alt="Social Gathering" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-orange-100 p-2 rounded-full mr-3">
+                                <i data-feather="users" class="text-orange-500"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900">Social Gatherings</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Birthdays, anniversaries, and special celebrations made memorable with our personalized touch.</p>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Themed decorations</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Custom small chops</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Entertainment coordination</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Planning Process -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Event Planning Process</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">A seamless journey from concept to execution</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Step 1 -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-orange-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-orange-500 text-2xl font-bold">1</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Consultation</h3>
+                    <p class="text-gray-600">We discuss your vision, preferences, and requirements for the event.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-orange-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-orange-500 text-2xl font-bold">2</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Proposal</h3>
+                    <p class="text-gray-600">We present a customized plan with options for venues, menus, and decor.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-orange-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-orange-500 text-2xl font-bold">3</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Coordination</h3>
+                    <p class="text-gray-600">We handle all logistics, vendor coordination, and timeline management.</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="bg-orange-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-orange-500 text-2xl font-bold">4</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Execution</h3>
+                    <p class="text-gray-600">Our team ensures flawless event delivery so you can enjoy the celebration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Event Packages</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Customizable packages to suit your needs and budget</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Basic Package -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden package-card transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-orange-500 text-white p-6 text-center">
+                        <h3 class="text-2xl font-bold mb-2">Basic Package</h3>
+                        <p class="text-xl font-medium">Starting from  ₦250,000</p>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Event consultation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Venue selection assistance</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Basic catering for 50 guests</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Simple decor setup</span>
+                            </li>
+                            <li class="flex items-start text-gray-400">
+                                <i data-feather="x" class="mr-2 mt-1"></i>
+                                <span>No vendor coordination</span>
+                            </li>
+                        </ul>
+                        <a href="#contact-form" class="block w-full bg-orange-500 hover:bg-orange-600 text-white text-center py-3 rounded-md font-medium transition duration-300">
+                            Get Quote
+                        </a>
+                    </div>
+                </div>
+                <!-- Premium Package -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden package-card transform scale-105 z-10" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-orange-600 text-white p-6 text-center relative">
+                        <div class="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold px-3 py-1 transform translate-x-2 -translate-y-2 rounded-full">
+                            POPULAR
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Premium Package</h3>
+                        <p class="text-xl font-medium">Starting from  ₦500,000</p>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Full event planning</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Premium catering for 100 guests</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Themed decor and setup</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Vendor coordination</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Day-of coordination</span>
+                            </li>
+                        </ul>
+                        <a href="#contact-form" class="block w-full bg-orange-600 hover:bg-orange-700 text-white text-center py-3 rounded-md font-medium transition duration-300">
+                            Get Quote
+                        </a>
+                    </div>
+                </div>
+                <!-- Luxury Package -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden package-card transition duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-orange-700 text-white p-6 text-center">
+                        <h3 class="text-2xl font-bold mb-2">Luxury Package</h3>
+                        <p class="text-xl font-medium">Starting from  ₦1,000,000</p>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Complete event production</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Gourmet catering for 200+ guests</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Custom luxury decor</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Full vendor management</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Dedicated event manager</span>
+                            </li>
+                        </ul>
+                        <a href="#contact-form" class="block w-full bg-orange-700 hover:bg-orange-800 text-white text-center py-3 rounded-md font-medium transition duration-300">
+                            Get Quote
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Event Gallery</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">A glimpse of our beautifully executed events</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Image 1 -->
+                <div class="gallery-item overflow-hidden rounded-lg" data-aos="fade-up" data-aos-delay="100">
+                    <img src="http://static.photos/event/640x360/30" alt="Wedding Setup" class="w-full h-full object-cover transition duration-500">
+                </div>
+                <!-- Image 2 -->
+                <div class="gallery-item overflow-hidden rounded-lg" data-aos="fade-up" data-aos-delay="200">
+                    <img src="http://static.photos/event/640x360/31" alt="Corporate Event" class="w-full h-full object-cover transition duration-500">
+                </div>
+                <!-- Image 3 -->
+                <div class="gallery-item overflow-hidden rounded-lg" data-aos="fade-up" data-aos-delay="300">
+                    <img src="http://static.photos/event/640x360/32" alt="Birthday Party" class="w-full h-full object-cover transition duration-500">
+                </div>
+                <!-- Image 4 -->
+                <div class="gallery-item overflow-hidden rounded-lg" data-aos="fade-up" data-aos-delay="400">
+                    <img src="http://static.photos/event/640x360/33" alt="Anniversary Celebration" class="w-full h-full object-cover transition duration-500">
+                </div>
+                <!-- Image 5 -->
+                <div class="gallery-item overflow-hidden rounded-lg" data-aos="fade-up" data-aos-delay="100">
+                    <img src="http://static.photos/event/640x360/34" alt="Cocktail Party" class="w-full h-full object-cover transition duration-500">
+                </div>
+                <!-- Image 6 -->
+                <div class="gallery-item overflow-hidden rounded-lg" data-aos="fade-up" data-aos-delay="200">
+                    <img src="http://static.photos/event/640x360/35" alt="Product Launch" class="w-full h-full object-cover transition duration-500">
+                </div>
+                <!-- Image 7 -->
+                <div class="gallery-item overflow-hidden rounded-lg" data-aos="fade-up" data-aos-delay="300">
+                    <img src="http://static.photos/event/640x360/36" alt="Wedding Reception" class="w-full h-full object-cover transition duration-500">
+                </div>
+                <!-- Image 8 -->
+                <div class="gallery-item overflow-hidden rounded-lg" data-aos="fade-up" data-aos-delay="400">
+                    <img src="http://static.photos/event/640x360/37" alt="Corporate Dinner" class="w-full h-full object-cover transition duration-500">
+                </div>
+            </div>
+            <div class="text-center mt-10">
+                <a href="#" class="inline-block px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-orange-500 hover:bg-orange-600 transition duration-300">
+                    View Full Gallery
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-orange-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Client Success Stories</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Hear from our satisfied clients about their event experiences</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-6">
+                        <img src="http://static.photos/people/200x200/10" alt="Adeola Johnson" class="w-16 h-16 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Adeola Johnson</h4>
+                            <p class="text-gray-500">Wedding Client</p>
+                        </div>
+                    </div>
+                    <div class="flex text-orange-400 mb-4">
+                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-gray-600 italic">"NanizTreate made our wedding day absolutely perfect! From the initial planning to the final execution, their attention to detail was impeccable. The decor was stunning, the food was delicious, and everything ran smoothly. We couldn't have asked for a better team to bring our vision to life."</p>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-6">
+                        <img src="http://static.photos/people/200x200/11" alt="Emeka Okonkwo" class="w-16 h-16 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Emeka Okonkwo</h4>
+                            <p class="text-gray-500">Corporate Client</p>
+                        </div>
+                    </div>
+                    <div class="flex text-orange-400 mb-4">
+                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-gray-600 italic">"We've worked with NanizTreate for three consecutive annual conferences, and they consistently deliver exceptional service. Their professionalism, creativity, and ability to handle last-minute changes make them our go-to event planners. The feedback from our attendees has been overwhelmingly positive every year."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact-form" class="py-16 bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+                <div class="mb-10 lg:mb-0" data-aos="fade-right">
+                    <h2 class="text-3xl font-bold mb-6">Let's Plan Your Event</h2>
+                    <p class="text-lg text-gray-300 mb-8">Fill out the form and we'll get back to you within 24 hours to discuss your event details.</p>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-orange-500 p-3 rounded-full mr-4">
+                                <i data-feather="phone" class="text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Call Us</h4>
+                                <p class="text-gray-300">+234 812 345 6789</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-orange-500 p-3 rounded-full mr-4">
+                                <i data-feather="mail" class="text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Email Us</h4>
+                                <p class="text-gray-300">events@naniztreate.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-orange-500 p-3 rounded-full mr-4">
+                                <i data-feather="clock" class="text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Working Hours</h4>
+                                <p class="text-gray-300">Monday - Friday: 9am - 6pm</p>
+                                <p class="text-gray-300">Saturday: 10am - 4pm</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-xl p-8" data-aos="fade-left">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Event Inquiry Form</h3>
+                    <form>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500">
+                            </div>
+                            <div>
+                                <label for="event-type" class="block text-gray-700 font-medium mb-2">Event Type</label>
+                                <select id="event-type" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500">
+                                    <option value="">Select Event Type</option>
+                                    <option value="wedding">Wedding</option>
+                                    <option value="corporate">Corporate Event</option>
+                                    <option value="birthday">Birthday Party</option>
+                                    <option value="anniversary">Anniversary</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="md:col-span-2">
+                                <label for="event-date" class="block text-gray-700 font-medium mb-2">Event Date</label>
+                                <input type="date" id="event-date" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500">
+                            </div>
+                            <div class="md:col-span-2">
+                                <label for="guests" class="block text-gray-700 font-medium mb-2">Estimated Number of Guests</label>
+                                <input type="number" id="guests" min="1" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500">
+                            </div>
+                            <div class="md:col-span-2">
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Event Details</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="w-full mt-6 bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-md font-medium transition duration-300">
+                            Submit Inquiry
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Find answers to common questions about our event planning services</p>
+            </div>
+            <div class="max-w-3xl mx-auto space-y-6">
+                <!-- Question 1 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <button class="faq-question w-full flex justify-between items-center p-6 focus:outline-none">
+                        <h3 class="text-lg font-medium text-gray-900 text-left">How far in advance should I book your event planning services?</h3>
+                        <i data-feather="chevron-down" class="text-orange-500 transform transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-600">We recommend booking our services at least 3-6 months in advance for weddings and large events, and at least 1-2 months in advance for smaller gatherings. However, we understand that some events come together quickly, so we'll do our best to accommodate last-minute requests based on availability.</p>
+                    </div>
+                </div>
+                <!-- Question 2 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <button class="faq-question w-full flex justify-between items-center p-6 focus:outline-none">
+                        <h3 class="text-lg font-medium text-gray-900 text-left">What areas do you serve for event planning?</h3>
+                        <i data-feather="chevron-down" class="text-orange-500 transform transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-600">We primarily serve Lagos and surrounding areas, including Victoria Island, Lekki, Ikoyi, and Mainland Lagos. For destination events outside Lagos, we're happy to discuss arrangements and potential travel fees. We've successfully planned events across Nigeria and would love to help make your special occasion memorable.</p>
+                    </div>
+                </div>
+                <!-- Question 3 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <button class="faq-question w-full flex justify-between items-center p-6 focus:outline-none">
+                        <h3 class="text-lg font-medium text-gray-900 text-left">Can you work within my budget?</h3>
+                        <i data-feather="chevron-down" class="text-orange-500 transform transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-600">Absolutely! We pride ourselves on creating beautiful events at various price points. During our initial consultation, we'll discuss your budget and priorities to create a customized plan that maximizes your resources. Our packages are flexible, and we're transparent about costs so there are no surprises.</p>
+                    </div>
+                </div>
+                <!-- Question 4 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="400">
+                    <button class="faq-question w-full flex justify-between items-center p-6 focus:outline-none">
+                        <h3 class="text-lg font-medium text-gray-900 text-left">Do you provide catering services or work with specific caterers?</h3>
+                        <i data-feather="chevron-down" class="text-orange-500 transform transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-600">Yes, we offer full catering services through our in-house culinary team specializing in small chops and Nigerian cuisine. We also have partnerships with several premium caterers if you're looking for specific menu options. Whether you want our catering or prefer to use your own caterer, we'll ensure the food service aligns perfectly with your event flow.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Newsletter -->
+    <section class="py-16 bg-blue-500 text-white" style="background-color: skyblue;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
+            <h2 class="text-3xl font-bold mb-4">Join Our Newsletter</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Subscribe to get updates on new menu items, special offers, and event planning tips</p>
+            <form class="max-w-md mx-auto flex">
+                <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-l-md focus:outline-none text-gray-900">
+                <button type="submit" class="bg-gray-900 hover:bg-gray-800 px-6 py-3 rounded-r-md font-medium transition duration-300">
+                    Subscribe
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <!-- <img src="http://static.photos/food/200x200/1" alt="Savory Bites Logo" class="h-12 mb-4"> -->
+                    <p class="text-gray-400 mb-4">Premium small chops and professional event planning services for all occasions.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white" style="color: white;">
+                            <i data-feather="facebook" style="color: white;"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white" style="color: white;">
+                            <i data-feather="instagram" style="color: white;"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white" style="color: white;">
+                            <i data-feather="twitter" style=""></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white" style="color: white;">
+                            <i data-feather="tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4" style="color: skyblue;">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="menu.html" class="text-gray-400 hover:text-white">Menu</a></li>
+                        <li><a href="events.html" class="text-gray-400 hover:text-white">Events</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="testimonials.html" class="text-gray-400 hover:text-white">Testimonials</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4" style="color: skyblue;">Contact Us</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i data-feather="map-pin" class="mr-2 mt-1" style="color: white;"></i>
+                            <span>123 Food Street, Victoria Island, Lagos</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="phone" class="mr-2 mt-1" style="color: white;"></i>
+                            <span>+234 812 345 6789</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="mail" class="mr-2 mt-1" style="color: white;"></i>
+                            <span>info@savorybites.com</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4" style="color: skyblue;">Opening Hours</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex justify-between">
+                            <span>Monday - Friday</span>
+                            <span>8am - 8pm</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Saturday</span>
+                            <span>9am - 10pm</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Sunday</span>
+                            <span>10am - 6pm</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400" style="color: skyblue;">
+                <p>&copy; 2025 Stavytech. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Initialize feather icons
+        feather.replace();
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // FAQ functionality
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const icon = this.querySelector('i');
+                
+                // Toggle answer visibility
+                answer.classList.toggle('hidden');
+                
+                // Rotate icon
+                if (answer.classList.contains('hidden')) {
+                    icon.classList.remove('rotate-180');
+                } else {
+                    icon.classList.add('rotate-180');
+                }
+                
+                // Close other open answers
+                document.querySelectorAll('.faq-answer').forEach(item => {
+                    if (item !== answer && !item.classList.contains('hidden')) {
+                        item.classList.add('hidden');
+                        item.previousElementSibling.querySelector('i').classList.remove('rotate-180');
+                    }
+                });
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

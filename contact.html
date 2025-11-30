@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | NanizTreate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <style>
+        .contact-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('http://static.photos/food/1200x630/15');
+            background-size: cover;
+            background-position: center;
+        }
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .form-input:focus {
+            border-color: #f97316;
+            box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2);
+        }
+        .map-container {
+            height: 400px;
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Navigation -->
+ <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 d-flex flex items-center space-x-2">
+                        <!-- <img class="h-12 w-auto" src="http://static.photos/food/200x200/1" alt="Savory Bites Logo"> -->
+                        <span class="text-xl font-bold text-gray-800">LAW-WILLS<b class="text-skyblue-400" style="color: skyblue;">ENTERPRISE</b></span>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-4">
+                            <a href="index.html" class="text-blue-500 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                            <a href="menu.html" class="text-gray-700 hover:text-gray-500 px-3 py-2 rounded-md text-sm font-medium" style="color: skyblue;">Menu</a>
+                            <a href="events.html" class="text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">Events</a>
+                            <a href="about.html" class="text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">About Us</a>
+                            <a href="testimonial.html" class="text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">Testimonials</a>
+                            <a href="contact.html" class="text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-4 flex items-center md:ml-6">
+                        <button id="cart-button" class="bg-orange-500 hover:bg-pink-600 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300" onclick="localStorage.setItem('cart', JSON.stringify(cart)); window.location.href='checkout.html';" style="background-color: skyblue;">
+                            <i data-feather="shopping-cart" class="inline mr-1"></i> Cart (<span id="cart-count">0</span>)
+                        </button>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-orange-500 focus:outline-none">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-orange-500 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="menu.html" class="text-gray-700 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium">Menu</a>
+                <a href="events.html" class="text-gray-700 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium">Events</a>
+                <a href="about.html" class="text-gray-700 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium">About Us</a>
+                <a href="testimonials.html" class="text-gray-700 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium">Testimonials</a>
+                <a href="contact.html" class="text-gray-700 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+                <button id="mobile-cart-button" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-md text-sm font-medium w-full mt-2" style="background-color: skyblue;">
+                    <i data-feather="shopping-cart" class="inline mr-1"></i> Cart (<span id="mobile-cart-count">0</span>)
+                </button>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="contact-hero text-white py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Contact Us</h1>
+            <p class="text-xl md:text-2xl mb-8">We'd love to hear from you! Reach out for inquiries, bookings, or just to say hello.</p>
+        </div>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Contact Card 1 -->
+                <div class="bg-white p-8 rounded-lg shadow-md text-center contact-card transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-orange-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="map-pin" class="text-orange-500 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Our Location</h3>
+                    <p class="text-gray-600">123 Food Street<br>Victoria Island<br>Lagos, Nigeria</p>
+                </div>
+                
+                <!-- Contact Card 2 -->
+                <div class="bg-white p-8 rounded-lg shadow-md text-center contact-card transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-orange-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="phone" class="text-orange-500 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Call Us</h3>
+                    <p class="text-gray-600">+234 812 345 6789<br>+234 812 345 6790</p>
+                    <a href="tel:+2348123456789" class="mt-4 inline-block bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-md text-sm font-medium transition duration-300">
+                        Call Us Now
+                    </a>
+                </div>
+                
+                <!-- Contact Card 3 -->
+                <div class="bg-white p-8 rounded-lg shadow-md text-center contact-card transition duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-orange-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="mail" class="text-orange-500 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Email Us</h3>
+                    <p class="text-gray-600">info@naniztreate.com<br>bookings@naniztreate.com</p>
+                    <a href="mailto:info@naniztreate.com" class="mt-4 inline-block border border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-6 py-2 rounded-md text-sm font-medium transition duration-300">
+                        Send Email
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
+                    <p class="text-lg text-gray-600 mb-8">Have questions about our services or want to book an event? Fill out the form below and we'll get back to you within 24 hours.</p>
+                    
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="first-name" class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+                                <input type="text" id="first-name" name="first-name" class="form-input w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition duration-300" required>
+                            </div>
+                            <div>
+                                <label for="last-name" class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+                                <input type="text" id="last-name" name="last-name" class="form-input w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition duration-300" required>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-input w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition duration-300" required>
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-input w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition duration-300">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                            <select id="subject" name="subject" class="form-input w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition duration-300" required>
+                                <option value="">Select a subject</option>
+                                <option value="booking">Event Booking</option>
+                                <option value="inquiry">General Inquiry</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="partnership">Partnership</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea id="message" name="message" rows="5" class="form-input w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition duration-300" required></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-md text-lg font-medium transition duration-300">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div data-aos="fade-left">
+                    <div class="map-container">
+
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3974.6087075419027!2d8.358699309041437!3d5.004471386575927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x105d7d2548ca099d%3A0x865bbd2d03c92227!2sJONATHAN%20BYPASS%20ROUNDABOUT!5e0!3m2!1sen!2sng!4v1757938381144!5m2!1sen!2sng" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                       
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Opening Hours</h3>
+                        <ul class="space-y-3">
+                            <li class="flex justify-between border-b border-gray-200 pb-2">
+                                <span class="text-gray-600">Monday - Friday</span>
+                                <span class="font-medium">8:00 AM - 8:00 PM</span>
+                            </li>
+                            <li class="flex justify-between border-b border-gray-200 pb-2">
+                                <span class="text-gray-600">Saturday</span>
+                                <span class="font-medium">9:00 AM - 10:00 PM</span>
+                            </li>
+                            <li class="flex justify-between border-b border-gray-200 pb-2">
+                                <span class="text-gray-600">Sunday</span>
+                                <span class="font-medium">10:00 AM - 6:00 PM</span>
+                            </li>
+                            <li class="flex justify-between border-b border-gray-200 pb-2">
+                                <span class="text-gray-600">Public Holidays</span>
+                                <span class="font-medium">10:00 AM - 4:00 PM</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Find answers to common questions about our services and booking process.</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto space-y-6">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
+                    <button class="flex justify-between items-center w-full text-left focus:outline-none">
+                        <h3 class="text-lg font-semibold text-gray-900">How far in advance should I book for my event?</h3>
+                        <i data-feather="chevron-down" class="text-orange-500 w-6 h-6 transform transition-transform duration-300"></i>
+                    </button>
+                    <div class="mt-4 text-gray-600 hidden">
+                        <p>We recommend booking at least 2-4 weeks in advance for small events and 4-8 weeks for larger events or weddings. However, we'll do our best to accommodate last-minute requests when possible.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <button class="flex justify-between items-center w-full text-left focus:outline-none">
+                        <h3 class="text-lg font-semibold text-gray-900">Do you offer customized menus for special dietary needs?</h3>
+                        <i data-feather="chevron-down" class="text-orange-500 w-6 h-6 transform transition-transform duration-300"></i>
+                    </button>
+                    <div class="mt-4 text-gray-600 hidden">
+                        <p>Absolutely! We can accommodate various dietary restrictions including vegetarian, vegan, gluten-free, halal, and other special requests. Please let us know your requirements when booking.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="300">
+                    <button class="flex justify-between items-center w-full text-left focus:outline-none">
+                        <h3 class="text-lg font-semibold text-gray-900">What areas do you serve for catering services?</h3>
+                        <i data-feather="chevron-down" class="text-orange-500 w-6 h-6 transform transition-transform duration-300"></i>
+                    </button>
+                    <div class="mt-4 text-gray-600 hidden">
+                        <p>We primarily serve Lagos and surrounding areas, including Victoria Island, Ikoyi, Lekki, Ajah, and Mainland locations. For events outside these areas, additional transportation fees may apply.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="400">
+                    <button class="flex justify-between items-center w-full text-left focus:outline-none">
+                        <h3 class="text-lg font-semibold text-gray-900">What payment methods do you accept?</h3>
+                        <i data-feather="chevron-down" class="text-orange-500 w-6 h-6 transform transition-transform duration-300"></i>
+                    </button>
+                    <div class="mt-4 text-gray-600 hidden">
+                        <p>We accept bank transfers, credit/debit cards, and cash payments. A 50% deposit is required to confirm your booking, with the balance due 7 days before your event.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="500">
+                    <button class="flex justify-between items-center w-full text-left focus:outline-none">
+                        <h3 class="text-lg font-semibold text-gray-900">Do you provide staff for events?</h3>
+                        <i data-feather="chevron-down" class="text-orange-500 w-6 h-6 transform transition-transform duration-300"></i>
+                    </button>
+                    <div class="mt-4 text-gray-600 hidden">
+                        <p>Yes, we can provide professional serving staff for your event. The number of staff required depends on your guest count and event type. This can be discussed during your consultation.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <p class="text-gray-600 mb-6">Still have questions?</p>
+                <a href="contact.html" class="inline-block bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-md text-lg font-medium transition duration-300">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+  <!-- Newsletter -->
+    <section class="py-16 bg-blue-500 text-white" style="background-color: skyblue;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
+            <h2 class="text-3xl font-bold mb-4">Join Our Newsletter</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Subscribe to get updates on new menu items, special offers, and event planning tips</p>
+            <form class="max-w-md mx-auto flex">
+                <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-l-md focus:outline-none text-gray-900">
+                <button type="submit" class="bg-gray-900 hover:bg-gray-800 px-6 py-3 rounded-r-md font-medium transition duration-300">
+                    Subscribe
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <!-- <img src="http://static.photos/food/200x200/1" alt="Savory Bites Logo" class="h-12 mb-4"> -->
+                    <p class="text-gray-400 mb-4">Premium small chops and professional event planning services for all occasions.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white" style="color: white;">
+                            <i data-feather="facebook" style="color: white;"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white" style="color: white;">
+                            <i data-feather="instagram" style="color: white;"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white" style="color: white;">
+                            <i data-feather="twitter" style=""></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white" style="color: white;">
+                            <i data-feather="tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4" style="color: skyblue;">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="menu.html" class="text-gray-400 hover:text-white">Menu</a></li>
+                        <li><a href="events.html" class="text-gray-400 hover:text-white">Events</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="testimonials.html" class="text-gray-400 hover:text-white">Testimonials</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4" style="color: skyblue;">Contact Us</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i data-feather="map-pin" class="mr-2 mt-1" style="color: white;"></i>
+                            <span>123 Food Street, Victoria Island, Lagos</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="phone" class="mr-2 mt-1" style="color: white;"></i>
+                            <span>+234 812 345 6789</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="mail" class="mr-2 mt-1" style="color: white;"></i>
+                            <span>info@savorybites.com</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4" style="color: skyblue;">Opening Hours</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex justify-between">
+                            <span>Monday - Friday</span>
+                            <span>8am - 8pm</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Saturday</span>
+                            <span>9am - 10pm</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Sunday</span>
+                            <span>10am - 6pm</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400" style="color: skyblue;">
+                <p>&copy; 2025 Stavytech. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+  
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Initialize feather icons
+        feather.replace();
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // FAQ accordion functionality
+        document.querySelectorAll('.bg-white.p-6.rounded-lg.shadow-md button').forEach(button => {
+            button.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                const icon = this.querySelector('i');
+                
+                // Toggle content visibility
+                content.classList.toggle('hidden');
+                
+                // Rotate icon
+                if (content.classList.contains('hidden')) {
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+
+        // Form submission (example)
+        // document.querySelector('form').addEventListener('submit', function(e) {
+        //     e.preventDefault();
+            // Here you would typically send the form data to your server
+        //     alert('Thank you for your message! We will get back to you soon.');
+        //     this.reset();
+        // });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+      emailjs.init('vMPoS5H-LDiU0uqxn'); // Replace with your EmailJS public key
+
+
+    document.addEventListener('DOMContentLoaded', function(){
+
+let form = document.querySelector('form');
+
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+
+  const contactParams = {
+        cust_first_name: document.getElementById("first-name").value,
+        cust_last_name: document.getElementById("last-name").value,
+        cust_email: document.getElementById("email").value,
+        cust_phone: document.getElementById("phone").value,
+        cust_subject: document.getElementById("subject").value,
+        cust_message: document.getElementById("message").value,
+        // contact_time: document.getElementById("best-time").value
+      };
+
+      emailjs.send( 'service_xlc1q5r', 'template_wqkkv16', contactParams)
+        .then(() => {
+          alert("✅ your message has been sent successfully! We will get back to You Shortly");
+         
+        }, (err) => {
+          alert("❌ Failed to send message. Please try again.");
+          console.error("EmailJS error:", err);
+        });
+    });
+
+    });
+    </script>
+</body>
+</html>

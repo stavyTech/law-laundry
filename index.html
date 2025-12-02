@@ -105,31 +105,49 @@
             </div>
         </div>
         <!-- Mobile menu -->
-        <div class="md:hidden hidden bg-white py-9 px-4 shadow-md" id="mobile-menu">
+             <div class="md:hidden hidden bg-white py-30 px-4 shadow-md" id="mobile-menu">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="index.html" class="text--500 block px-3 py-2 rounded-md text-base font-medium" style="color: black;">Home</a>
-                <a href="menu.html" class="text-gray-700 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium" style="color: black;">Menu</a>
+                <li class="flex items-center space-x-1">
+      <i data-feather="home" style="color: skyblue;"></i>
+      <a href="#home" class="hover:text-blue-500 text-gray-700 hover:text-blue-500 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+    </li>
+                <!-- <a href="index.html" class="text--500 block px-3 py-2 rounded-md text-base font-medium hover:text-blue-500" style="color: black;">Home</a> -->
+                 <li class="flex items-center space-x-1">
+                 <i data-feather="info" style="color: skyblue;"></i>
+                  <a href="#about" class="hover:text-blue-500 text-gray-700 hover:text-blue-500 block px-3 py-2 rounded-md text-base font-medium">About Us</a>
+                  </li>
+                <!-- <a href="menu.html" class="text-gray-700 hover:text-blue-500 block px-3 py-2 rounded-md text-base font-medium" style="color: black;">About Us</a> -->
                   <div class="py-4">
-                <button class="flex items-center text-gray-600" id="shop-toggle" style="color: black;">
+                      <li class="flex items-center space-x-1 lex items-center text-gray-600 hover:text-blue-500" id="shop-toggle" style="color: black;">
+                       <i data-feather="shopping-bag" style="color: skyblue;"></i>
+                     <a href="#shop" class="hover:text-blue-500 px-3 py-2 ">Shop <i class="fas fa-chevron-down ml-1 text-xs" style="color: black;"></i></a>
+                   </li>
+                <!-- <button class="flex items-center text-gray-600 hover:text-blue-500" id="shop-toggle" style="color: black;">
                     Shop <i class="fas fa-chevron-down ml-1 text-xs" style="color: black;"></i>
-                </button>
+                </button> -->
                 <div class="hidden pl-4 mt-1" id="shop-dropdown">
-                    <a href="bags.html" class="block py-1 text-gray-600" style="color: black;">Bags</a>
-                    <a href="shoes.html" class="block py-1 text-gray-600" style="color: black;">Shoes</a>
-                    <a href="clothes.html" class="block py-1 text-gray-600" style="color: black;">Clothes</a>
+                    <a href="bags.html" class="block py-1 text-gray-600 hover:text-blue-500" style="color: black;">Bags</a>
+                    <a href="shoes.html" class="block py-1 text-gray-600 hover:text-blue-500" style="color: black;">Shoes</a>
+                     <i data-feather="phone"></i>
+                    <a href="clothes.html" class="block py-1 text-gray-600 hover:text-blue-500" style="color: black;">Clothes</a>
                 </div>
             </div>
-                <a href="contact.html" class="text-gray-700 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
-                <button id="mobile-cart-button" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-md text-sm font-medium w-full mt-2" style="background-color: skyblue;">
+
+             <li class="flex items-center space-x-1">
+      <i data-feather="phone" style="color: skyblue;"></i>
+      <a href="contact" class="text-gray-700 hover:text-blue-500 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+    </li>
+                <!-- <a href="contact.html" class="text-gray-700 hover:text-blue-500 block px-3 py-2 rounded-md text-base font-medium">Contact</a> -->
+                <button id="mobile-cart-button" class="bg-orange-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium w-full mt-2" style="background-color: skyblue;">
                     <i data-feather="shopping-cart" class="inline mr-1"></i> Cart (<span id="mobile-cart-count">0</span>)
                 </button>
             </div>
         </div>
+        
     </nav>
 
-    <!-- HERO SECTION -->
 
-<!-- HERO SECTION (Your original unchanged code) -->
+<!-- HERO SECTION -->
 <section class="relative h-[90vh] flex items-center justify-center text-white overflow-hidden">
 
     <!-- Background Carousel -->
@@ -408,7 +426,7 @@ Fresh Clothes, Zero Stress
                     <div class="flex items-center mb-4">
                         <img src="http://static.photos/people/200x200/1" alt="Amina Bello" class="w-12 h-12 rounded-full mr-4">
                         <div>
-                            <h4 class="font-semibold text-gray-900">Amina Bello</h4>
+                            <h4 class="font-semibold text-gray-900">Daniel Williams</h4>
                             <div class="flex text-orange-400">
                                 <i data-feather="star" class="w-4 h-4 fill-current"></i>
                                 <i data-feather="star" class="w-4 h-4 fill-current"></i>
@@ -425,7 +443,7 @@ Fresh Clothes, Zero Stress
                     <div class="flex items-center mb-4">
                         <img src="http://static.photos/people/200x200/2" alt="Tunde Williams" class="w-12 h-12 rounded-full mr-4">
                         <div>
-                            <h4 class="font-semibold text-gray-900">Tunde Williams</h4>
+                            <h4 class="font-semibold text-gray-900">Mabel Williams</h4>
                             <div class="flex text-orange-400">
                                 <i data-feather="star" class="w-4 h-4 fill-current"></i>
                                 <i data-feather="star" class="w-4 h-4 fill-current"></i>
@@ -442,7 +460,7 @@ Fresh Clothes, Zero Stress
                     <div class="flex items-center mb-4">
                         <img src="http://static.photos/people/200x200/3" alt="Chioma Okeke" class="w-12 h-12 rounded-full mr-4">
                         <div>
-                            <h4 class="font-semibold text-gray-900">Chioma Okeke</h4>
+                            <h4 class="font-semibold text-gray-900">Williams Favour</h4>
                             <div class="flex text-orange-400">
                                 <i data-feather="star" class="w-4 h-4 fill-current"></i>
                                 <i data-feather="star" class="w-4 h-4 fill-current"></i>

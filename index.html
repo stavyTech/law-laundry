@@ -10,9 +10,12 @@
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <style>
         .hero-bg {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('http://static.photos/food/1200x630/42');
+            /* background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('http://static.photos/food/1200x630/42'); */
             background-size: cover;
             background-position: center;
         }
@@ -109,33 +112,40 @@
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <li class="flex items-center space-x-1">
       <i data-feather="home" style="color: skyblue;"></i>
-      <a href="#home" class="hover:text-blue-500 text-gray-700 hover:text-blue-500 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+      <a href="index.html" class="hover:text-blue-500 text-gray-700 hover:text-blue-500 block px-3 py-2 rounded-md text-base font-medium">Home</a>
     </li>
                 <!-- <a href="index.html" class="text--500 block px-3 py-2 rounded-md text-base font-medium hover:text-blue-500" style="color: black;">Home</a> -->
                  <li class="flex items-center space-x-1">
                  <i data-feather="info" style="color: skyblue;"></i>
-                  <a href="#about" class="hover:text-blue-500 text-gray-700 hover:text-blue-500 block px-3 py-2 rounded-md text-base font-medium">About Us</a>
+                  <a href="about.html" class="hover:text-blue-500 text-gray-700 hover:text-blue-500 block px-3 py-2 rounded-md text-base font-medium">About Us</a>
                   </li>
                 <!-- <a href="menu.html" class="text-gray-700 hover:text-blue-500 block px-3 py-2 rounded-md text-base font-medium" style="color: black;">About Us</a> -->
-                  <div class="py-4">
-                      <li class="flex items-center space-x-1 lex items-center text-gray-600 hover:text-blue-500" id="shop-toggle" style="color: black;">
-                       <i data-feather="shopping-bag" style="color: skyblue;"></i>
-                     <a href="#shop" class="hover:text-blue-500 px-3 py-2 ">Shop <i class="fas fa-chevron-down ml-1 text-xs" style="color: black;"></i></a>
-                   </li>
-                <!-- <button class="flex items-center text-gray-600 hover:text-blue-500" id="shop-toggle" style="color: black;">
-                    Shop <i class="fas fa-chevron-down ml-1 text-xs" style="color: black;"></i>
-                </button> -->
-                <div class="hidden pl-4 mt-1" id="shop-dropdown">
-                    <a href="bags.html" class="block py-1 text-gray-600 hover:text-blue-500" style="color: black;">Bags</a>
-                    <a href="shoes.html" class="block py-1 text-gray-600 hover:text-blue-500" style="color: black;">Shoes</a>
-                     <i data-feather="phone"></i>
-                    <a href="clothes.html" class="block py-1 text-gray-600 hover:text-blue-500" style="color: black;">Clothes</a>
-                </div>
-            </div>
+                  <div class="py-4 group relative">
+
+    <li class="flex items-center space-x-1 text-gray-600 hover:text-blue-500 cursor-pointer" style="color: black;">
+        <i data-feather="shopping-bag" style="color: skyblue;"></i>
+
+        <a class="px-3 py-2 flex items-center">
+            Shop 
+            <i class="fas fa-chevron-down ml-1 text-xs" style="color: black;"></i>
+        </a>
+    </li>
+
+    <!-- Dropdown -->
+    <div class="absolute left-0 mt-2 bg-white shadow-md rounded-md w-40 py-2 hidden group-hover:block z-50">
+
+        <a href="bags.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Bags</a>
+
+        <a href="shoes.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Shoes</a>
+
+        <a href="clothes.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Clothes</a>
+    </div>
+</div>
+
 
              <li class="flex items-center space-x-1">
       <i data-feather="phone" style="color: skyblue;"></i>
-      <a href="contact" class="text-gray-700 hover:text-blue-500 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+      <a href="contact.html" class="text-gray-700 hover:text-blue-500 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
     </li>
                 <!-- <a href="contact.html" class="text-gray-700 hover:text-blue-500 block px-3 py-2 rounded-md text-base font-medium">Contact</a> -->
                 <button id="mobile-cart-button" class="bg-orange-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium w-full mt-2" style="background-color: skyblue;">
@@ -197,55 +207,8 @@ Fresh Clothes, Zero Stress
 }
 </style>
 
-    <!-- Featured Products -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16 font-laila" style="color: skyblue;">SHOP OUR PRODUCTS</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Product 1 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                    <div class="h-48 bg-[url('https://images.unsplash.com/photo-1597633125184-9fd7e54f0ff7?q=80&w=435&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center"></div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 font-laila">Stylish Bags for Every Occasion</h3>
-                        <p class="text-gray-600 mb-4 font-montserrat">Explore quality bags that combine durability with elegance—perfect for work, travel, and everyday fashion. </p>
-                        <a href="products/cocoa.html" class="text-blue-600 font-medium flex items-center" style="color: skyblue;">
-                            View Details <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Product 2 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                    <div class="h-48 bg-[url('https://images.unsplash.com/photo-1521774971864-62e842046145?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center"></div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 font-laila">Footwear Designed for Comfort</h3>
-                        <p class="text-gray-600 mb-4 font-montserrat">Discover premium shoes crafted with style, durability, and all-day comfort in mind for any event or lifestyle.</p>
-                        <a href="products/cattle.html" class="text-blue-600 font-medium flex items-center" style="color: skyblue;">
-                            View Details <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Product 3 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                    <div class="h-48 bg-[url('https://images.unsplash.com/photo-1583316174775-bd6dc0e9f298?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center"></div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 font-laila">Fashion That Fits Your Lifestyle</h3>
-                        <p class="text-gray-600 mb-4 font-montserrat">Upgrade your wardrobe with stylish, premium outfits that combine comfort, confidence, and elegance.</p>
-                        <a href="products/fruits.html" class="text-blue-600 font-medium flex items-center" style="color: skyblue;">
-                            View Details <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-12">
-                <a href="products.html" class="inline-block bg-white-600 hover:bg-black-700 text-white px-6 py-3 rounded-lg font-medium transition" style="background-color: skyblue;">
-                    View All Products
-                </a>
-            </div>
-        </div>
-    </section>
+
+
 
  <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
@@ -267,29 +230,10 @@ Fresh Clothes, Zero Stress
                     <h3 class="font-laila text-xl font-semibold mb-3">Dry Cleaning</h3>
                     <p class="text-gray-600">Specialized cleaning for delicate fabrics and garments that require extra care.</p>
                 </div>
-                  <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-green-600 mb-4">
-                        <i class="fas fa-spray-can text-4xl" style="color: skyblue;"></i>
-                    </div>
-                    <h3 class="font-laila text-xl font-semibold mb-3">Dry Cleaning</h3>
-                    <p class="text-gray-600">Specialized cleaning for delicate fabrics and garments that require extra care.</p>
-                </div>
+               
 
-  <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-green-600 mb-4">
-                        <i class="fas fa-spray-can text-4xl" style="color: skyblue;"></i>
-                    </div>
-                    <h3 class="font-laila text-xl font-semibold mb-3">Dry Cleaning</h3>
-                    <p class="text-gray-600">Specialized cleaning for delicate fabrics and garments that require extra care.</p>
-                </div>
 
-                  <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-green-600 mb-4">
-                        <i class="fas fa-spray-can text-4xl" style="color: skyblue;"></i>
-                    </div>
-                    <h3 class="font-laila text-xl font-semibold mb-3">Dry Cleaning</h3>
-                    <p class="text-gray-600">Specialized cleaning for delicate fabrics and garments that require extra care.</p>
-                </div>
+                
 
                 <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="200">
                     <div class="text-yellow-600 mb-4">
@@ -301,6 +245,257 @@ Fresh Clothes, Zero Stress
             </div>
         </div>
     </section>
+
+
+    <section class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+
+        <h2 class="text-3xl font-bold text-center mb-16 font-laila" style="color: skyblue;">
+            SHOP OUR PRODUCTS
+        </h2>
+
+        <!-- Swiper Container -->
+        <div class="swiper myProductSwiper">
+            <div class="swiper-wrapper">
+
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                        <div class="h-48 bg-[url('https://images.unsplash.com/photo-1597633125184-9fd7e54f0ff7?q=80&w=435&auto=format&fit=crop')] bg-cover bg-center"></div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 font-laila">Stylish Bags for Every Occasion</h3>
+                            <p class="text-gray-600 mb-4 font-montserrat">
+                                Explore quality bags that combine durability with elegance—perfect for work, travel, and everyday fashion.
+                            </p>
+                            <a href="products/cocoa.html" class="text-blue-600 font-medium flex items-center" style="color: skyblue;">
+                                View Details <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                        <div class="h-48 bg-[url('https://images.unsplash.com/photo-1521774971864-62e842046145?q=80&w=869&auto=format&fit=crop')] bg-cover bg-center"></div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 font-laila">Footwear Designed for Comfort</h3>
+                            <p class="text-gray-600 mb-4 font-montserrat">
+                                Discover premium shoes crafted with style, durability, and all-day comfort in mind for any event or lifestyle.
+                            </p>
+                            <a href="products/cattle.html" class="text-blue-600 font-medium flex items-center" style="color: skyblue;">
+                                View Details <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                        <div class="h-48 bg-[url('https://images.unsplash.com/photo-1583316174775-bd6dc0e9f298?q=80&w=870&auto=format&fit=crop')] bg-cover bg-center"></div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 font-laila">Fashion That Fits Your Lifestyle</h3>
+                            <p class="text-gray-600 mb-4 font-montserrat">
+                                Upgrade your wardrobe with stylish, premium outfits that combine comfort, confidence, and elegance.
+                            </p>
+                            <a href="products/fruits.html" class="text-blue-600 font-medium flex items-center" style="color: skyblue;">
+                                View Details <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <!-- Slide 4 -->
+                <div class="swiper-slide">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                        <div class="h-48 bg-[url('https://images.unsplash.com/photo-1559563458-527698bf5295?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center"></div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 font-laila">Fashion That Fits Your Lifestyle</h3>
+                            <p class="text-gray-600 mb-4 font-montserrat">
+                                Upgrade your wardrobe with stylish, premium outfits that combine comfort, confidence, and elegance.
+                            </p>
+                            <a href="products/fruits.html" class="text-blue-600 font-medium flex items-center" style="color: skyblue;">
+                                View Details <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <!-- Slide 5-->
+                <div class="swiper-slide">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                        <div class="h-48 bg-[url('https://images.unsplash.com/photo-1594750863984-8be99377ce41?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center"></div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 font-laila">Fashion That Fits Your Lifestyle</h3>
+                            <p class="text-gray-600 mb-4 font-montserrat">
+                                Upgrade your wardrobe with stylish, premium outfits that combine comfort, confidence, and elegance.
+                            </p>
+                            <a href="products/fruits.html" class="text-blue-600 font-medium flex items-center" style="color: skyblue;">
+                                View Details <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                       
+                <!-- Slide 6-->
+                <div class="swiper-slide">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                        <div class="h-48 bg-[url('https://images.unsplash.com/photo-1635796332668-78830169097d?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center"></div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 font-laila">Fashion That Fits Your Lifestyle</h3>
+                            <p class="text-gray-600 mb-4 font-montserrat">
+                                Upgrade your wardrobe with stylish, premium outfits that combine comfort, confidence, and elegance.
+                            </p>
+                            <a href="products/fruits.html" class="text-blue-600 font-medium flex items-center" style="color: skyblue;">
+                                View Details <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                       
+                <!-- Slide 7-->
+                <div class="swiper-slide">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                        <div class="h-48 bg-[url('https://plus.unsplash.com/premium_photo-1723925110801-110c00d392a3?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center"></div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 font-laila">Fashion That Fits Your Lifestyle</h3>
+                            <p class="text-gray-600 mb-4 font-montserrat">
+                                Upgrade your wardrobe with stylish, premium outfits that combine comfort, confidence, and elegance.
+                            </p>
+                            <a href="products/fruits.html" class="text-blue-600 font-medium flex items-center" style="color: skyblue;">
+                                View Details <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                       
+                <!-- Slide 8-->
+                <div class="swiper-slide">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                        <div class="h-48 bg-[url('https://images.unsplash.com/photo-1459712105412-be146fae746d?q=80&w=874&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center"></div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 font-laila">Fashion That Fits Your Lifestyle</h3>
+                            <p class="text-gray-600 mb-4 font-montserrat">
+                                Upgrade your wardrobe with stylish, premium outfits that combine comfort, confidence, and elegance.
+                            </p>
+                            <a href="products/fruits.html" class="text-blue-600 font-medium flex items-center" style="color: skyblue;">
+                                View Details <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                       
+                <!-- Slide 9-->
+                <div class="swiper-slide">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                        <div class="h-48 bg-[url('https://images.unsplash.com/photo-1583316174775-bd6dc0e9f298?q=80&w=870&auto=format&fit=crop')] bg-cover bg-center"></div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 font-laila">Fashion That Fits Your Lifestyle</h3>
+                            <p class="text-gray-600 mb-4 font-montserrat">
+                                Upgrade your wardrobe with stylish, premium outfits that combine comfort, confidence, and elegance.
+                            </p>
+                            <a href="products/fruits.html" class="text-blue-600 font-medium flex items-center" style="color: skyblue;">
+                                View Details <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                       
+                <!-- Slide 10-->
+                <div class="swiper-slide">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                        <div class="h-48 bg-[url('https://plus.unsplash.com/premium_photo-1723826750819-02ee8f2e5a0c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDI4fHx8ZW58MHx8fHx8')] bg-cover bg-center"></div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 font-laila">Fashion That Fits Your Lifestyle</h3>
+                            <p class="text-gray-600 mb-4 font-montserrat">
+                                Upgrade your wardrobe with stylish, premium outfits that combine comfort, confidence, and elegance.
+                            </p>
+                            <a href="products/fruits.html" class="text-blue-600 font-medium flex items-center" style="color: skyblue;">
+                                View Details <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Arrows -->
+            <!-- <div class="swiper-button-next text-sky-500"></div>
+            <div class="swiper-button-prev text-sky-500"></div> -->
+
+          
+        </div>
+
+          <!-- Indicators -->
+            <div class="swiper-pagination mt-5" style="padding-top: 1px;"></div>
+
+        <div class="text-center mt-12">
+            <a href="products.html" class="inline-block bg-white-600 hover:bg-black-700 text-white px-6 py-3 rounded-lg font-medium transition" style="background-color: skyblue;">
+                View All Products
+            </a>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Featured Products -->
+    <!-- <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16 font-laila" style="color: skyblue;">SHOP OUR PRODUCTS</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8"> -->
+                <!-- Product 1 -->
+                <!-- <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                    <div class="h-48 bg-[url('https://images.unsplash.com/photo-1597633125184-9fd7e54f0ff7?q=80&w=435&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 font-laila">Stylish Bags for Every Occasion</h3>
+                        <p class="text-gray-600 mb-4 font-montserrat">Explore quality bags that combine durability with elegance—perfect for work, travel, and everyday fashion. </p>
+                        <a href="products/cocoa.html" class="text-blue-600 font-medium flex items-center" style="color: skyblue;">
+                            View Details <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div> -->
+                
+                <!-- Product 2 -->
+                <!-- <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                    <div class="h-48 bg-[url('https://images.unsplash.com/photo-1521774971864-62e842046145?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 font-laila">Footwear Designed for Comfort</h3>
+                        <p class="text-gray-600 mb-4 font-montserrat">Discover premium shoes crafted with style, durability, and all-day comfort in mind for any event or lifestyle.</p>
+                        <a href="products/cattle.html" class="text-blue-600 font-medium flex items-center" style="color: skyblue;">
+                            View Details <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div> -->
+                
+                <!-- Product 3 -->
+                <!-- <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                    <div class="h-48 bg-[url('https://images.unsplash.com/photo-1583316174775-bd6dc0e9f298?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 font-laila">Fashion That Fits Your Lifestyle</h3>
+                        <p class="text-gray-600 mb-4 font-montserrat">Upgrade your wardrobe with stylish, premium outfits that combine comfort, confidence, and elegance.</p>
+                        <a href="products/fruits.html" class="text-blue-600 font-medium flex items-center" style="color: skyblue;">
+                            View Details <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="products.html" class="inline-block bg-white-600 hover:bg-black-700 text-white px-6 py-3 rounded-lg font-medium transition" style="background-color: skyblue;">
+                    View All Products
+                </a>
+            </div>
+        </div>
+    </section> -->
+
     <!-- Featured Items -->
     <section class="py-16 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -618,6 +813,7 @@ Fresh Clothes, Zero Stress
     </div>
 
     <script>
+
         // Initialize AOS animations
         AOS.init({
             duration: 800,
@@ -930,6 +1126,58 @@ document.addEventListener("DOMContentLoaded", () => {
     setInterval(updateSlide, 5000);
 });
 
+// shop carousel///
+
+// <script>
+//   var swiper = new Swiper(".myProductSwiper", {
+//     slidesPerView: 1,
+//     spaceBetween: 20,
+//     loop: true,
+    
+//     breakpoints: {
+//       768: { slidesPerView: 2 },
+//       1024: { slidesPerView: 3 }
+//     },
+
+//     navigation: {
+//       nextEl: ".swiper-button-next",
+//       prevEl: ".swiper-button-prev",
+//     },
+
+//     pagination: {
+//       el: ".swiper-pagination",
+//       clickable: true,
+//     },
+//   });
+
+  var swiper = new Swiper(".myProductSwiper", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+
+    autoplay: {
+      delay: 3000,   // 3 seconds
+      disableOnInteraction: false,  
+    },
+    
+    breakpoints: {
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 }
+    },
+
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+
+
+// </script>
 
 
     </script>

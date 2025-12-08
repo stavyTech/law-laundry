@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Menu | NanizTreate</title>
+    <title>SHOP</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -16,11 +16,11 @@
             transition: all 0.3s ease;
         }
         .cart-btn:hover {
-            background-color: #f59e0b;
+            background-color: skyblue;
             color: white;
         }
         .category-btn.active {
-            background-color: #f59e0b;
+            background-color: skyblue;
             color: white;
         }
     </style>
@@ -65,7 +65,7 @@
     <div class="absolute top-full left-0 w-48 bg-white shadow-lg rounded-lg p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
                             <a href="#bag.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Bags</a>
                             <a href="shoe.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Shoes</a>
-                            <a href="#clothe.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Clothes</a>
+                            <a href="clothe.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Clothes</a>
                             
                         </div>
                         </div>
@@ -109,12 +109,12 @@
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <li class="flex items-center space-x-1">
       <i data-feather="home" style="color: skyblue;"></i>
-      <a href="#home" class="hover:text-blue-500 text-gray-700 hover:text-blue-500 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+      <a href="index.html" class="hover:text-blue-500 text-gray-700 hover:text-blue-500 block px-3 py-2 rounded-md text-base font-medium">Home</a>
     </li>
                 <!-- <a href="index.html" class="text--500 block px-3 py-2 rounded-md text-base font-medium hover:text-blue-500" style="color: black;">Home</a> -->
                  <li class="flex items-center space-x-1">
                  <i data-feather="info" style="color: skyblue;"></i>
-                  <a href="#about" class="hover:text-blue-500 text-gray-700 hover:text-blue-500 block px-3 py-2 rounded-md text-base font-medium">About Us</a>
+                  <a href="about.html" class="hover:text-blue-500 text-gray-700 hover:text-blue-500 block px-3 py-2 rounded-md text-base font-medium">About Us</a>
                   </li>
                 <!-- <a href="menu.html" class="text-gray-700 hover:text-blue-500 block px-3 py-2 rounded-md text-base font-medium" style="color: black;">About Us</a> -->
                   <div class="py-4 group relative">
@@ -142,7 +142,7 @@
 
              <li class="flex items-center space-x-1">
       <i data-feather="phone" style="color: skyblue;"></i>
-      <a href="contact" class="text-gray-700 hover:text-blue-500 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+      <a href="contact.html" class="text-gray-700 hover:text-blue-500 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
     </li>
                 <!-- <a href="contact.html" class="text-gray-700 hover:text-blue-500 block px-3 py-2 rounded-md text-base font-medium">Contact</a> -->
                 <button id="mobile-cart-button" class="bg-orange-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium w-full mt-2" style="background-color: skyblue;">
@@ -155,10 +155,13 @@
 
 
     <!-- Menu Header -->
-    <section class="bg-orange-500 text-white py-20">
+    <section class="bg-orange-500 text-white py-20" style="background-color: skyblue; background-image: url(https://images.unsplash.com/photo-1624613533305-28d421d70875?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    
+    background-size: cover;
+    " >
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Delicious Menu</h1>
-            <p class="text-xl max-w-3xl mx-auto">Explore our wide selection of premium small chops and catering options</p>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Shop From Our Collections</h1>
+            <p class="text-xl max-w-3xl mx-auto">Explore our wide selection of premium Collections</p>
         </div>
     </section>
 
@@ -167,105 +170,108 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex overflow-x-auto pb-4 mb-8 hide-scrollbar">
                 <div class="flex space-x-2">
-                    <button class="category-btn active px-6 py-2 rounded-full bg-orange-500 text-white whitespace-nowrap" data-category="all">All Items</button>
-                    <button class="category-btn px-6 py-2 rounded-full bg-white border border-gray-300 whitespace-nowrap" data-category="pastries">Pastries</button>
-                    <button class="category-btn px-6 py-2 rounded-full bg-white border border-gray-300 whitespace-nowrap" data-category="meat">Meat</button>
-                    <button class="category-btn px-6 py-2 rounded-full bg-white border border-gray-300 whitespace-nowrap" data-category="vegetarian">Vegetarian</button>
-                    <button class="category-btn px-6 py-2 rounded-full bg-white border border-gray-300 whitespace-nowrap" data-category="special">Special</button>
-                    <button class="category-btn px-6 py-2 rounded-full bg-white border border-gray-300 whitespace-nowrap" data-category="combos">Combos</button>
+                    <button class="category-btn active px-6 py-2 rounded-full bg-orange-500 text-white whitespace-nowrap" data-category="all" style="background-color: skyblue;">All Items</button>
+                    <button class="category-btn px-6 py-2 rounded-full bg-white border border-gray-300 whitespace-nowrap" data-category="bags">Bags</button>
+                    <button class="category-btn px-6 py-2 rounded-full bg-white border border-gray-300 whitespace-nowrap" data-category="shoes">Shoes</button>
+                    <button class="category-btn px-6 py-2 rounded-full bg-white border border-gray-300 whitespace-nowrap" data-category="clothes">Clothes</button>
+                    <button class="category-btn px-6 py-2 rounded-full bg-white border border-gray-300 whitespace-nowrap" data-category="sneakers">Sneakers</button>
+                    <button class="category-btn px-6 py-2 rounded-full bg-white border border-gray-300 whitespace-nowrap" data-category="perfumes">Perfumes</button>
                 </div>
             </div>
-
-            <!-- Pastries Category -->
-            <div class="mb-16" data-category="pastries">
-                <h2 class="text-2xl font-bold mb-6 pb-2 border-b border-gray-200">Pastries</h2>
+            <!-- shop Items -->
+            <!-- Bags Category -->
+            <div class="mb-16" data-category="bags">
+                <h2 class="text-2xl font-bold mb-6 pb-2 border-b border-gray-200">Bags</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Item 1 -->
                     <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up">
-                        <img src="http://static.photos/food/640x360/101" alt="Meat Pie" class="w-full h-48 object-cover">
+                        <img src="https://images.unsplash.com/photo-1597633125184-9fd7e54f0ff7?q=80&w=435&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gucci Bag" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Meat Pie</h3>
-                            <p class="text-gray-600 mb-4">Flaky pastry filled with seasoned minced meat and vegetables</p>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Gucci Bag</h3>
+                            <p class="text-gray-600 mb-4"> Best Fashion Brand for Hand Bags </p>
                             <div class="flex justify-between items-center">
-                                <span class="text-orange-500 font-bold text-lg">₦1,500</span>
-                                <button class="cart-btn bg-gray-100 hover:bg-orange-500 text-orange-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" data-id="1" data-name="Meat Pie" data-price="1500">
-                                    <i data-feather="plus" class="inline mr-1"></i> Add
-                                </button>
+                                 <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦1,800</span>
+                                 <!-- <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">$18000</span> -->
+                            <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="3" data-name="Gucci Bag" data-price="1800">
+                                <i data-feather="plus" class="inline mr-1"></i> Add
+                            </button>
                             </div>
                         </div>
                     </div>
                     <!-- Item 2 -->
                     <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up" data-aos-delay="100">
-                        <img src="http://static.photos/food/640x360/102" alt="Chicken Pie" class="w-full h-48 object-cover">
+                        <img src="https://images.unsplash.com/photo-1594223274512-ad4803739b7c?q=80&w=457&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Turte Bag" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Chicken Pie</h3>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Turte Bag</h3>
                             <p class="text-gray-600 mb-4">Buttery pastry filled with succulent chicken chunks and vegetables</p>
                             <div class="flex justify-between items-center">
-                                <span class="text-orange-500 font-bold text-lg">₦1,800</span>
-                                <button class="cart-btn bg-gray-100 hover:bg-orange-500 text-orange-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" data-id="2" data-name="Chicken Pie" data-price="1800">
-                                    <i data-feather="plus" class="inline mr-1"></i> Add
-                                </button>
+                               <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦1,800</span>
+                               <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">$18000</span>
+                            <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="3" data-name="Spring Rolls" data-price="1800">
+                                <i data-feather="plus" class="inline mr-1"></i> Add
+                            </button>
                             </div>
                         </div>
                     </div>
                     <!-- Item 3 -->
                     <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up" data-aos-delay="200">
-                        <img src="http://static.photos/food/640x360/103" alt="Sausage Roll" class="w-full h-48 object-cover">
+                        <img src="https://images.unsplash.com/photo-1738653926597-6923cde1b38b?q=80&w=435&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Sausage Roll" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Sausage Roll</h3>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">louis Vitn</h3>
                             <p class="text-gray-600 mb-4">Flaky pastry wrapped around juicy sausage with special seasoning</p>
                             <div class="flex justify-between items-center">
-                                <span class="text-orange-500 font-bold text-lg">₦1,200</span>
-                                <button class="cart-btn bg-gray-100 hover:bg-orange-500 text-orange-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" data-id="3" data-name="Sausage Roll" data-price="1200">
-                                    <i data-feather="plus" class="inline mr-1"></i> Add
-                                </button>
+                                 <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦1,800</span>
+                                 <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">$18000</span>
+                            <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="3" data-name="Spring Rolls" data-price="1800">
+                                <i data-feather="plus" class="inline mr-1"></i> Add
+                            </button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Meat Category -->
-            <div class="mb-16" data-category="meat">
-                <h2 class="text-2xl font-bold mb-6 pb-2 border-b border-gray-200">Meat Delights</h2>
+            <!-- Shoe Category -->
+            <div class="mb-16" data-category="shoe">
+                <h2 class="text-2xl font-bold mb-6 pb-2 border-b border-gray-200">Shoes</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Item 1 -->
                     <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up">
-                        <img src="http://static.photos/food/640x360/104" alt="Chicken Samosa" class="w-full h-48 object-cover">
+                        <img src="https://images.unsplash.com/photo-1610398752800-146f269dfcc8?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Boot Heel" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Chicken Samosa</h3>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Boot Heel</h3>
                             <p class="text-gray-600 mb-4">Crispy pastry filled with spiced chicken and vegetables</p>
                             <div class="flex justify-between items-center">
-                                <span class="text-orange-500 font-bold text-lg">₦1,200</span>
-                                <button class="cart-btn bg-gray-100 hover:bg-orange-500 text-orange-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" data-id="4" data-name="Chicken Samosa" data-price="1200">
-                                    <i data-feather="plus" class="inline mr-1"></i> Add
-                                </button>
+                                 <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦1,800</span>
+                            <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="3" data-name="Boot Heel" data-price="1800">
+                                <i data-feather="plus" class="inline mr-1"></i> Add
+                            </button>
                             </div>
                         </div>
                     </div>
                     <!-- Item 2 -->
                     <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up" data-aos-delay="100">
-                        <img src="http://static.photos/food/640x360/105" alt="Beef Samosa" class="w-full h-48 object-cover">
+                        <img src="https://images.unsplash.com/photo-1670243322279-727e3d9df08d?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="High Heel" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Beef Samosa</h3>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">High Heel</h3>
                             <p class="text-gray-600 mb-4">Triangular pastry pockets filled with spiced minced beef</p>
                             <div class="flex justify-between items-center">
-                                <span class="text-orange-500 font-bold text-lg">₦1,300</span>
-                                <button class="cart-btn bg-gray-100 hover:bg-orange-500 text-orange-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" data-id="5" data-name="Beef Samosa" data-price="1300">
-                                    <i data-feather="plus" class="inline mr-1"></i> Add
-                                </button>
+                                 <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦1,800</span>
+                            <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="3" data-name="High Heel" data-price="1800">
+                                <i data-feather="plus" class="inline mr-1"></i> Add
+                            </button>
                             </div>
                         </div>
                     </div>
                     <!-- Item 3 -->
                     <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up" data-aos-delay="200">
-                        <img src="http://static.photos/food/640x360/106" alt="Chicken Wings" class="w-full h-48 object-cover">
+                        <img src="https://images.unsplash.com/photo-1710897941273-7bf3ba9f0108?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="White Heels" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Spicy Chicken Wings</h3>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">White Heels</h3>
                             <p class="text-gray-600 mb-4">Juicy chicken wings marinated in our special spicy sauce</p>
                             <div class="flex justify-between items-center">
-                                <span class="text-orange-500 font-bold text-lg">₦2,500</span>
-                                <button class="cart-btn bg-gray-100 hover:bg-orange-500 text-orange-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" data-id="6" data-name="Spicy Chicken Wings" data-price="2500">
+                                <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦2,500</span>
+                                <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="6" data-name="white Heels" data-price="2500">
                                     <i data-feather="plus" class="inline mr-1"></i> Add
                                 </button>
                             </div>
@@ -274,82 +280,82 @@
                 </div>
             </div>
 
-            <!-- Vegetarian Category -->
-            <div class="mb-16" data-category="vegetarian">
-                <h2 class="text-2xl font-bold mb-6 pb-2 border-b border-gray-200">Vegetarian Options</h2>
+            <!-- clothes Category -->
+            <div class="mb-16" data-category="clothes">
+                <h2 class="text-2xl font-bold mb-6 pb-2 border-b border-gray-200">Clothes</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Item 1 -->
                     <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up">
-                        <img src="http://static.photos/food/640x360/107" alt="Vegetable Spring Rolls" class="w-full h-48 object-cover">
+                        <img src="https://plus.unsplash.com/premium_photo-1675186049366-64a655f8f537?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Vegetable Spring Rolls" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Vegetable Spring Rolls</h3>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Red Jacket</h3>
                             <p class="text-gray-600 mb-4">Crispy rolls filled with fresh vegetables and special seasoning</p>
                             <div class="flex justify-between items-center">
-                                <span class="text-orange-500 font-bold text-lg">₦1,800</span>
-                                <button class="cart-btn bg-gray-100 hover:bg-orange-500 text-orange-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" data-id="7" data-name="Vegetable Spring Rolls" data-price="1800">
-                                    <i data-feather="plus" class="inline mr-1"></i> Add
-                                </button>
+                                 <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦1,800</span>
+                            <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="3" data-name="Red Jacket" data-price="1800">
+                                <i data-feather="plus" class="inline mr-1"></i> Add
+                            </button>
                             </div>
                         </div>
                     </div>
                     <!-- Item 2 -->
                     <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up" data-aos-delay="100">
-                        <img src="http://static.photos/food/640x360/108" alt="Vegetable Samosa" class="w-full h-48 object-cover">
+                        <img src="https://images.unsplash.com/photo-1649937408746-4d2f603f91c8?q=80&w=626&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Vegetable Samosa" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Vegetable Samosa</h3>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Winter Jacket</h3>
                             <p class="text-gray-600 mb-4">Spiced potato and vegetable filling in crispy pastry</p>
                             <div class="flex justify-between items-center">
-                                <span class="text-orange-500 font-bold text-lg">₦1,000</span>
-                                <button class="cart-btn bg-gray-100 hover:bg-orange-500 text-orange-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" data-id="8" data-name="Vegetable Samosa" data-price="1000">
-                                    <i data-feather="plus" class="inline mr-1"></i> Add
-                                </button>
+                                <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦1,800</span>
+                            <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="3" data-name="Winter Jacket" data-price="1800">
+                                <i data-feather="plus" class="inline mr-1"></i> Add
+                            </button>
                             </div>
                         </div>
                     </div>
                     <!-- Item 3 -->
                     <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up" data-aos-delay="200">
-                        <img src="http://static.photos/food/640x360/109" alt="Stuffed Mushrooms" class="w-full h-48 object-cover">
+                        <img src="https://images.unsplash.com/photo-1611312449408-fcece27cdbb7?q=80&w=369&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Stuffed Mushrooms" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Stuffed Mushrooms</h3>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Jean Jacket</h3>
                             <p class="text-gray-600 mb-4">Button mushrooms stuffed with breadcrumbs and herbs</p>
                             <div class="flex justify-between items-center">
-                                <span class="text-orange-500 font-bold text-lg">₦2,200</span>
-                                <button class="cart-btn bg-gray-100 hover:bg-orange-500 text-orange-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" data-id="9" data-name="Stuffed Mushrooms" data-price="2200">
-                                    <i data-feather="plus" class="inline mr-1"></i> Add
-                                </button>
+                                 <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦1,800</span>
+                            <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="3" data-name="White Heels" data-price="1800">
+                                <i data-feather="plus" class="inline mr-1"></i> Add
+                            </button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Special Category -->
+            <!-- Sneakers Category -->
             <div class="mb-16" data-category="special">
-                <h2 class="text-2xl font-bold mb-6 pb-2 border-b border-gray-200">Special Treats</h2>
+                <h2 class="text-2xl font-bold mb-6 pb-2 border-b border-gray-200">Sneakers</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Item 1 -->
                     <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up">
-                        <img src="http://static.photos/food/640x360/110" alt="Mini Beef Burger" class="w-full h-48 object-cover">
+                        <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Mini Beef Burger" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="text-xl font-semibold text-gray-900 mb-2">Mini Beef Burger</h3>
                             <p class="text-gray-600 mb-4">Juicy beef patty with cheese, lettuce and special sauce</p>
                             <div class="flex justify-between items-center">
-                                <span class="text-orange-500 font-bold text-lg">₦2,500</span>
-                                <button class="cart-btn bg-gray-100 hover:bg-orange-500 text-orange-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" data-id="10" data-name="Mini Beef Burger", data-price="2500">
-                                    <i data-feather="plus" class="inline mr-1"></i> Add
-                                </button>
+                                <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦1,800</span>
+                            <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="3" data-name="Spring Rolls" data-price="1800">
+                                <i data-feather="plus" class="inline mr-1"></i> Add
+                            </button>
                             </div>
                         </div>
                     </div>
                     <!-- Item 2 -->
                     <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up" data-aos-delay="100">
-                        <img src="http://static.photos/food/640x360/111" alt="Mini Chicken Burger" class="w-full h-48 object-cover">
+                        <img src="https://images.unsplash.com/photo-1601144537844-c2a0494aeb41?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Nike Airforce" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Mini Chicken Burger</h3>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Nike Airforce</h3>
                             <p class="text-gray-600 mb-4">Tender chicken fillet with cheese and special sauce</p>
                             <div class="flex justify-between items-center">
-                                <span class="text-orange-500 font-bold text-lg">₦2,300</span>
-                                <button class="cart-btn bg-gray-100 hover:bg-orange-500 text-orange-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" data-id="11" data-name="Mini Chicken Burger" data-price="2300">
+                                <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦2,300</span>
+                                <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="11" data-name="Nike Airforce" data-price="2300">
                                     <i data-feather="plus" class="inline mr-1"></i> Add
                                 </button>
                             </div>
@@ -357,13 +363,13 @@
                     </div>
                     <!-- Item 3 -->
                     <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="f fade-up" data-aos-delay="200">
-                        <img src="http://static.photos/food/640x360/112" alt="Puff Puff" class="w-full h-48 object-cover">
+                        <img src="https://images.unsplash.com/photo-1595341888016-a392ef81b7de?q=80&w=879&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Puff Puff" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Puff Puff (6 pieces)</h3>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">K-Swiss</h3>
                             <p class="text-gray-600 mb-4">Soft, fluffy dough balls with a hint of nutmeg</p>
                             <div class="flex justify-between items-center">
-                                <span class="text-orange-500 font-bold text-lg">₦1,000</span>
-                                <button class="cart-btn bg-gray-100 hover:bg-orange-500 text-orange-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" data-id="12" data-name="Puff Puff (6 pieces)" data-price="1000">
+                                <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦1,000</span>
+                                <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="12" data-name="K-Swiss" data-price="1000">
                                     <i data-feather="plus" class="inline mr-1"></i> Add
                                 </button>
                             </div>
@@ -372,19 +378,19 @@
                 </div>
             </div>
 
-            <!-- Combos Category -->
-            <div class="mb-16" data-category="combos">
-                <h2 class="text-2xl font-bold mb-6 pb-2 border-b border-gray-200">Special Combos</h2>
+            <!-- Perfumes Category -->
+            <div class="mb-16" data-category="perfumes">
+                <h2 class="text-2xl font-bold mb-6 pb-2 border-b border-gray-200">Perfumes</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Item 1 -->
                     <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up">
-                        <img src="http://static.photos/food/640x360/113" alt="Small Chops Combo A" class="w-full h-48 object-cover">
+                        <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Perfume coco A" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Small Chips Combo A</h3>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">perfume coco</h3>
                             <p class="text-gray-600 mb-4">2 Meat Pies, 2 Chicken Samosas, 2 Spring Rolls, 6 Puff Puff</p>
                             <div class="flex justify-between items-center">
-                                <span class="text-orange-500 font-bold text-lg">₦6,500</span>
-                                <button class="cart-btn bg-gray-100 hover:bg-orange-500 text-orange-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" data-id="13" data-name="Small Chips Combo A" data-price="6500">
+                                <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦6,500</span>
+                                <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="13" data-name="perfume coco" data-price="6500">
                                     <i data-feather="plus" class="inline mr-1"></i> Add
                                 </button>
                             </div>
@@ -392,13 +398,13 @@
                     </div>
                     <!-- Item 2 -->
                     <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up" data-aos-delay="100">
-                        <img src="http://static.photos/food/640x360/114" alt="Small Chops Combo B" class="w-full h-48 object-cover">
+                        <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Blue De Channel" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Small Chips Combo B</h3>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Blue De Channel</h3>
                             <p class="text-gray-600 mb-4">2 Chicken Pies, 2 Beef Samosas, 2 Mini Burgers, 6 Puff Puff</p>
                             <div class="flex justify-between items-center">
-                                <span class="text-orange-500 font-bold text-lg">₦7,800</span>
-                                <button class="cart-btn bg-gray-100 hover:bg-orange-500 text-orange-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" data-id="14" data-name="Small Chips Combo B" data-price="7800">
+                                <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦7,800</span>
+                                <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="14" data-name="Blue De Channel" data-price="7800">
                                     <i data-feather="plus" class="inline mr-1"></i> Add
                                 </button>
                             </div>
@@ -406,13 +412,13 @@
                     </div>
                     <!-- Item 3 -->
                     <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up" data-aos-delay="200">
-                        <img src="http://static.photos/food/640x360/115" alt="Party Pack" class="w-full h-48 object-cover">
+                        <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Party Pack" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Party Pack</h3>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Poeme</h3>
                             <p class="text-gray-600 mb-4">10 Meat Pies, 10 Chicken Samosas, 10 Spring Rolls, 20 Puff Puff</p>
                             <div class="flex justify-between items-center">
-                                <span class="text-orange-500 font-bold text-lg">₦25,000</span>
-                                <button class="cart-btn bg-gray-100 hover:bg-orange-500 text-orange-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" data-id="15" data-name="Party Pack" data-price="25000">
+                                <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦25,000</span>
+                                <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="15" data-name="Poeme" data-price="25000">
                                     <i data-feather="plus" class="inline mr-1"></i> Add
                                 </button>
                             </div>
@@ -424,7 +430,7 @@
     </section>
 
     <!-- Catering CTA -->
-    <section class="py-16 bg-orange-500 text-white">
+    <!-- <section class="py-16 bg-orange-500 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-3xl font-bold mb-6">Need Catering for Your Event?</h2>
             <p class="text-xl mb-8 max-w-3xl mx-auto">We provide professional catering services for weddings, birthdays, corporate events and more.</p>
@@ -432,12 +438,12 @@
                 Learn More
             </a>
         </div>
-    </section>
+    </section> -->
   <!-- Newsletter -->
     <section class="py-16 bg-blue-500 text-white" style="background-color: skyblue;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
             <h2 class="text-3xl font-bold mb-4">Join Our Newsletter</h2>
-            <p class="text-xl mb-8 max-w-2xl mx-auto">Subscribe to get updates on new menu items, special offers, and event planning tips</p>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Subscribe to get updates on Our New Arrivals and Exclusive Offers</p>
             <form class="max-w-md mx-auto flex">
                 <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-l-md focus:outline-none text-gray-900">
                 <button type="submit" class="bg-gray-900 hover:bg-gray-800 px-6 py-3 rounded-r-md font-medium transition duration-300">

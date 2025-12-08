@@ -27,9 +27,29 @@
             background-color:aliceblue;
             color: white;
         }
+
+        /* Bubble Animation */
+    /* Washing bubbles animation */
+.bubble {
+    position: absolute;
+    background: skyblue;
+    /* background: rgba(255, 255, 255, 0.65); */
+    border-radius: 50%;
+    backdrop-filter: blur(3px);
+    animation: floatUp s infinite ease-in-out;
+   
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    50% { transform: translateY(-25px) scale(1.15); opacity: 0.85; }
+    100% { transform: translateY(-60px) scale(1); opacity: 0; }
+}
+    
+
     </style>
 </head>
-<body class="font-sans">
+<body class="font-sans" >
     <!-- Navigation -->
     <nav class="bg-white shadow-lg sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-9">
@@ -160,6 +180,22 @@
 <!-- HERO SECTION -->
 <section class="relative h-[90vh] flex items-center justify-center text-white overflow-hidden">
 
+    <!-- Washing Bubbles Left -->
+<span class="bubble" style="width: 22px; height: 22px; top: 20%; left: -10px; animation-delay: .2s;"></span>
+<span class="bubble" style="width: 18px; height: 18px; top: 40%; left: -15px; animation-delay: 1.4s;"></span>
+<span class="bubble" style="width: 28px; height: 28px; top: 65%; left: -8px; animation-delay: .9s;"></span>
+
+<!-- Washing Bubbles Center -->
+<span class="bubble" style="width: 14px; height: 14px; top: 18%; left: 45%; animation-delay: .5s;"></span>
+<span class="bubble" style="width: 26px; height: 26px; top: 55%; left: 48%; animation-delay: 1.8s;"></span>
+<span class="bubble" style="width: 20px; height: 20px; top: 72%; left: 50%; animation-delay: 2.4s;"></span>
+
+<!-- Washing Bubbles Right -->
+<span class="bubble" style="width: 25px; height: 25px; top: 12%; right: -10px; animation-delay: 0s;"></span>
+<span class="bubble" style="width: 16px; height: 16px; top: 35%; right: -15px; animation-delay: 1s;"></span>
+<span class="bubble" style="width: 30px; height: 30px; top: 70%; right: -8px; animation-delay: 2s;"></span>
+
+
     <!-- Background Carousel -->
     <div class="absolute inset-0 z-0 overflow-hidden">
         <div class="image-carousel w-full h-full absolute inset-0 bg-cover bg-center opacity-100 transition-opacity duration-1000"></div>
@@ -213,16 +249,57 @@ Fresh Clothes, Zero Stress
  <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <h2 class="font-laila text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">⭐ Our Services ⭐</h2>
-            
+            <!-- Washing Bubbles -->
+  
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition" data-aos="fade-up">
+
+                    <!-- Washing Bubbles Left -->
+<div class="relative" data-aos="fade-left">
+
+    <!-- Main Image
+    <img src="https://images.unsplash.com/photo-1635274605638-d44babc08a4f?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+        alt="Event Setup" 
+        class="rounded-lg shadow-xl w-full"> -->
+
+    <!-- Washing Bubbles LEFT -->
+    <span class="bubble" style="width: 22px; height: 22px; top: 20%; left: -10px; animation-delay: .2s;"></span>
+    <span class="bubble" style="width: 18px; height: 18px; top: 40%; left: -15px; animation-delay: 1.4s;"></span>
+    <span class="bubble" style="width: 28px; height: 28px; top: 65%; left: -8px; animation-delay: .9s;"></span>
+
+    <!-- Washing Bubbles CENTER -->
+    <span class="bubble" style="width: 14px; height: 14px; top: 18%; left: 45%; animation-delay: .5s;"></span>
+    <span class="bubble" style="width: 26px; height: 26px; top: 55%; left: 48%; animation-delay: 1.8s;"></span>
+    <span class="bubble" style="width: 20px; height: 20px; top: 72%; left: 50%; animation-delay: 2.4s;"></span>
+
+    <!-- Washing Bubbles RIGHT -->
+    <span class="bubble" style="width: 25px; height: 25px; top: 12%; right: -10px; animation-delay: 0s;"></span>
+    <span class="bubble" style="width: 16px; height: 16px; top: 35%; right: -15px; animation-delay: 1s;"></span>
+    <span class="bubble" style="width: 30px; height: 30px; top: 70%; right: -8px; animation-delay: 2s;"></span>
+
+    <!-- Date Box -->
+    <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg hidden md:block">
+        <div class="flex items-center">
+            <div class="bg-blue-100 p-3 rounded-full mr-3">
+                <i data-feather="calendar" class="text-blue-500" style="background-color: skyblue;"></i>
+            </div>
+            <div>
+                <p class="text-sm text-gray-500">Next Available Date</p>
+                <p class="font-semibold">June 15, 2023</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
                     <div class="text-blue-600 mb-4">
                         <i class="fas fa-tshirt text-4xl" style="color: skyblue;"></i>
                     </div>
                     <h3 class="font-laila text-xl font-semibold mb-3">Laundry Service</h3>
                     <p class="text-gray-600">Professional washing, drying, and folding of your everyday clothes.</p>
                 </div>
-                
+                <!-- Washing Bubbles -->
+    
                 <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="100">
                     <div class="text-green-600 mb-4">
                         <i class="fas fa-spray-can text-4xl" style="color: skyblue;"></i>
@@ -249,7 +326,11 @@ Fresh Clothes, Zero Stress
 
     <section class="py-20 bg-white">
     <div class="container mx-auto px-6">
-
+ <span class="bubble" style="width: 25px; height: 25px; top: 10%; right: 20%; animation-delay: 0s;"></span>
+    <span class="bubble" style="width: 15px; height: 15px; top: 25%; right: 5%; animation-delay: 1s;"></span>
+    <span class="bubble" style="width: 20px; height: 20px; top: 40%; right: 15%; animation-delay: 2s;"></span>
+    <span class="bubble" style="width: 18px; height: 18px; top: 60%; right: 10%; animation-delay: 3s;"></span>
+    <span class="bubble" style="width: 30px; height: 30px; top: 75%; right: 25%; animation-delay: 1.5s;"></span>
         <h2 class="text-3xl font-bold text-center mb-16 font-laila" style="color: skyblue;">
             SHOP OUR PRODUCTS
         </h2>
@@ -257,7 +338,11 @@ Fresh Clothes, Zero Stress
         <!-- Swiper Container -->
         <div class="swiper myProductSwiper">
             <div class="swiper-wrapper">
-
+ <span class="bubble" style="width: 25px; height: 25px; top: 10%; right: 20%; animation-delay: 0s;"></span>
+    <span class="bubble" style="width: 15px; height: 15px; top: 25%; right: 5%; animation-delay: 1s;"></span>
+    <span class="bubble" style="width: 20px; height: 20px; top: 40%; right: 15%; animation-delay: 2s;"></span>
+    <span class="bubble" style="width: 18px; height: 18px; top: 60%; right: 10%; animation-delay: 3s;"></span>
+    <span class="bubble" style="width: 30px; height: 30px; top: 75%; right: 25%; animation-delay: 1.5s;"></span>
                 <!-- Slide 1 -->
                 <div class="swiper-slide">
                     <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
@@ -268,7 +353,7 @@ Fresh Clothes, Zero Stress
                                 Explore quality bags that combine durability with elegance—perfect for work, travel, and everyday fashion.
                             </p>
                             <a href="products/cocoa.html" class="text-blue-600 font-medium flex items-center" style="color: skyblue;">
-                                View Details <i class="fas fa-arrow-right ml-2"></i>
+                                View More <i class="fas fa-arrow-right ml-2"></i>
                             </a>
                         </div>
                     </div>
@@ -284,7 +369,7 @@ Fresh Clothes, Zero Stress
                                 Discover premium shoes crafted with style, durability, and all-day comfort in mind for any event or lifestyle.
                             </p>
                             <a href="products/cattle.html" class="text-blue-600 font-medium flex items-center" style="color: skyblue;">
-                                View Details <i class="fas fa-arrow-right ml-2"></i>
+                                View More <i class="fas fa-arrow-right ml-2"></i>
                             </a>
                         </div>
                     </div>
@@ -300,7 +385,7 @@ Fresh Clothes, Zero Stress
                                 Upgrade your wardrobe with stylish, premium outfits that combine comfort, confidence, and elegance.
                             </p>
                             <a href="products/fruits.html" class="text-blue-600 font-medium flex items-center" style="color: skyblue;">
-                                View Details <i class="fas fa-arrow-right ml-2"></i>
+                                View More <i class="fas fa-arrow-right ml-2"></i>
                             </a>
                         </div>
                     </div>
@@ -317,7 +402,7 @@ Fresh Clothes, Zero Stress
                                 Upgrade your wardrobe with stylish, premium outfits that combine comfort, confidence, and elegance.
                             </p>
                             <a href="products/fruits.html" class="text-blue-600 font-medium flex items-center" style="color: skyblue;">
-                                View Details <i class="fas fa-arrow-right ml-2"></i>
+                                View More <i class="fas fa-arrow-right ml-2"></i>
                             </a>
                         </div>
                     </div>
@@ -334,7 +419,7 @@ Fresh Clothes, Zero Stress
                                 Upgrade your wardrobe with stylish, premium outfits that combine comfort, confidence, and elegance.
                             </p>
                             <a href="products/fruits.html" class="text-blue-600 font-medium flex items-center" style="color: skyblue;">
-                                View Details <i class="fas fa-arrow-right ml-2"></i>
+                                View More <i class="fas fa-arrow-right ml-2"></i>
                             </a>
                         </div>
                     </div>
@@ -351,7 +436,7 @@ Fresh Clothes, Zero Stress
                                 Upgrade your wardrobe with stylish, premium outfits that combine comfort, confidence, and elegance.
                             </p>
                             <a href="products/fruits.html" class="text-blue-600 font-medium flex items-center" style="color: skyblue;">
-                                View Details <i class="fas fa-arrow-right ml-2"></i>
+                                View Deta <i class="fas fa-arrow-right ml-2"></i>
                             </a>
                         </div>
                     </div>
@@ -368,7 +453,7 @@ Fresh Clothes, Zero Stress
                                 Upgrade your wardrobe with stylish, premium outfits that combine comfort, confidence, and elegance.
                             </p>
                             <a href="products/fruits.html" class="text-blue-600 font-medium flex items-center" style="color: skyblue;">
-                                View Details <i class="fas fa-arrow-right ml-2"></i>
+                                View More <i class="fas fa-arrow-right ml-2"></i>
                             </a>
                         </div>
                     </div>
@@ -385,7 +470,7 @@ Fresh Clothes, Zero Stress
                                 Upgrade your wardrobe with stylish, premium outfits that combine comfort, confidence, and elegance.
                             </p>
                             <a href="products/fruits.html" class="text-blue-600 font-medium flex items-center" style="color: skyblue;">
-                                View Details <i class="fas fa-arrow-right ml-2"></i>
+                                View More <i class="fas fa-arrow-right ml-2"></i>
                             </a>
                         </div>
                     </div>
@@ -402,7 +487,7 @@ Fresh Clothes, Zero Stress
                                 Upgrade your wardrobe with stylish, premium outfits that combine comfort, confidence, and elegance.
                             </p>
                             <a href="products/fruits.html" class="text-blue-600 font-medium flex items-center" style="color: skyblue;">
-                                View Details <i class="fas fa-arrow-right ml-2"></i>
+                                View More <i class="fas fa-arrow-right ml-2"></i>
                             </a>
                         </div>
                     </div>
@@ -419,7 +504,7 @@ Fresh Clothes, Zero Stress
                                 Upgrade your wardrobe with stylish, premium outfits that combine comfort, confidence, and elegance.
                             </p>
                             <a href="products/fruits.html" class="text-blue-600 font-medium flex items-center" style="color: skyblue;">
-                                View Details <i class="fas fa-arrow-right ml-2"></i>
+                                View More <i class="fas fa-arrow-right ml-2"></i>
                             </a>
                         </div>
                     </div>
@@ -430,71 +515,22 @@ Fresh Clothes, Zero Stress
             <!-- Arrows -->
             <!-- <div class="swiper-button-next text-sky-500"></div>
             <div class="swiper-button-prev text-sky-500"></div> -->
-
+ <!-- Indicators -->
+            <!-- <div class="swiper-pagination mt-5" style="padding-top: 200px;"  ></div> -->
           
         </div>
 
-          <!-- Indicators -->
-            <div class="swiper-pagination mt-5" style="padding-top: 1px;"></div>
+         
 
-        <div class="text-center mt-12">
-            <a href="products.html" class="inline-block bg-white-600 hover:bg-black-700 text-white px-6 py-3 rounded-lg font-medium transition" style="background-color: skyblue;">
-                View All Products
+        <div class="text-center mt-1" style="padding-top: 100px;">
+            <a href="shop.html" class="inline-block bg-white-600 hover:bg-black-700 text-white px-6 py-3 rounded-lg font-medium transition" style="background-color: skyblue;">
+            Shop From Our Collections
             </a>
         </div>
     </div>
 </section>
 
-
-    <!-- Featured Products -->
-    <!-- <section class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16 font-laila" style="color: skyblue;">SHOP OUR PRODUCTS</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8"> -->
-                <!-- Product 1 -->
-                <!-- <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                    <div class="h-48 bg-[url('https://images.unsplash.com/photo-1597633125184-9fd7e54f0ff7?q=80&w=435&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center"></div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 font-laila">Stylish Bags for Every Occasion</h3>
-                        <p class="text-gray-600 mb-4 font-montserrat">Explore quality bags that combine durability with elegance—perfect for work, travel, and everyday fashion. </p>
-                        <a href="products/cocoa.html" class="text-blue-600 font-medium flex items-center" style="color: skyblue;">
-                            View Details <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div> -->
-                
-                <!-- Product 2 -->
-                <!-- <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                    <div class="h-48 bg-[url('https://images.unsplash.com/photo-1521774971864-62e842046145?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center"></div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 font-laila">Footwear Designed for Comfort</h3>
-                        <p class="text-gray-600 mb-4 font-montserrat">Discover premium shoes crafted with style, durability, and all-day comfort in mind for any event or lifestyle.</p>
-                        <a href="products/cattle.html" class="text-blue-600 font-medium flex items-center" style="color: skyblue;">
-                            View Details <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div> -->
-                
-                <!-- Product 3 -->
-                <!-- <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                    <div class="h-48 bg-[url('https://images.unsplash.com/photo-1583316174775-bd6dc0e9f298?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center"></div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 font-laila">Fashion That Fits Your Lifestyle</h3>
-                        <p class="text-gray-600 mb-4 font-montserrat">Upgrade your wardrobe with stylish, premium outfits that combine comfort, confidence, and elegance.</p>
-                        <a href="products/fruits.html" class="text-blue-600 font-medium flex items-center" style="color: skyblue;">
-                            View Details <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-12">
-                <a href="products.html" class="inline-block bg-white-600 hover:bg-black-700 text-white px-6 py-3 rounded-lg font-medium transition" style="background-color: skyblue;">
-                    View All Products
-                </a>
-            </div>
-        </div>
-    </section> -->
+<!--  -->
 
     <!-- Featured Items -->
     <section class="py-16 bg-gray-50">
@@ -554,8 +590,46 @@ Fresh Clothes, Zero Stress
             </div>
         </div>
     </section>
+<div class="buble-container d-flex" style="display: flex;">
+     <div class="relative" data-aos="fade-right">
 
-    
+    <!-- Washing Bubbles -->
+    <span class="bubble" style="width: 25px; height: 25px; top: 10%; right: 20%; animation-delay: 0s;"></span>
+    <span class="bubble" style="width: 15px; height: 15px; top: 25%; right: 5%; animation-delay: 1s;"></span>
+    <span class="bubble" style="width: 20px; height: 20px; top: 40%; right: 15%; animation-delay: 2s;"></span>
+    <span class="bubble" style="width: 18px; height: 18px; top: 60%; right: 10%; animation-delay: 3s;"></span>
+    <span class="bubble" style="width: 30px; height: 30px; top: 75%; right: 25%; animation-delay: 1.5s;"></span>
+    <span class="bubble" style="width: 25px; height: 25px; top: 10%; right: 20%; animation-delay: 0s;"></span>
+    <span class="bubble" style="width: 15px; height: 15px; top: 25%; right: 5%; animation-delay: 1s;"></span>
+    <span class="bubble" style="width: 20px; height: 20px; top: 40%; right: 15%; animation-delay: 2s;"></span>
+    <span class="bubble" style="width: 18px; height: 18px; top: 60%; right: 10%; animation-delay: 3s;"></span>
+    <span class="bubble" style="width: 30px; height: 30px; top: 75%; right: 25%; animation-delay: 1.5s;"></span>
+
+    <!-- Date box -->
+   
+</div>
+  <div class="relative" data-aos="fade-left">
+  
+
+    <!-- Washing Bubbles -->
+    <span class="bubble" style="width: 25px; height: 25px; top: 10%; right: 20%; animation-delay: 0s;"></span>
+    <span class="bubble" style="width: 15px; height: 15px; top: 25%; right: 5%; animation-delay: 1s;"></span>
+    <span class="bubble" style="width: 20px; height: 20px; top: 40%; right: 15%; animation-delay: 2s;"></span>
+    <span class="bubble" style="width: 18px; height: 18px; top: 60%; right: 10%; animation-delay: 3s;"></span>
+    <span class="bubble" style="width: 30px; height: 30px; top: 75%; right: 25%; animation-delay: 1.5s;"></span>
+    <span class="bubble" style="width: 25px; height: 25px; top: 10%; right: 20%; animation-delay: 0s;"></span>
+    <span class="bubble" style="width: 15px; height: 15px; top: 25%; right: 5%; animation-delay: 1s;"></span>
+    <span class="bubble" style="width: 20px; height: 20px; top: 40%; right: 15%; animation-delay: 2s;"></span>
+    <span class="bubble" style="width: 18px; height: 18px; top: 60%; right: 10%; animation-delay: 3s;"></span>
+    <span class="bubble" style="width: 30px; height: 30px; top: 75%; right: 25%; animation-delay: 1.5s;"></span>
+
+    <!-- Date box -->
+   
+</div>
+
+</div>
+  
+
 
     <!-- PREMUIM LAUNDARY CTA -->
     <section class="py-16 bg-orange-50" style="background-color: aliceblue;">
@@ -609,6 +683,11 @@ Fresh Clothes, Zero Stress
 
 
     <!-- Testimonial Preview -->
+      <span class="bubble" style="width: 25px; height: 25px; top: 10%; right: 20%; animation-delay: 0s;"></span>
+    <span class="bubble" style="width: 15px; height: 15px; top: 25%; right: 5%; animation-delay: 1s;"></span>
+    <span class="bubble" style="width: 20px; height: 20px; top: 40%; right: 15%; animation-delay: 2s;"></span>
+    <span class="bubble" style="width: 18px; height: 18px; top: 60%; right: 10%; animation-delay: 3s;"></span>
+    <span class="bubble" style="width: 30px; height: 30px; top: 75%; right: 25%; animation-delay: 1.5s;"></span>
     <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12" data-aos="fade-up">
@@ -801,7 +880,7 @@ Fresh Clothes, Zero Stress
                     </div>
                 </div>
                 <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-                    <button id="checkout-btn" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-orange-500 text-base font-medium text-white hover:bg-orange-600 focus:outline-none sm:ml-3 sm:w-auto sm:text-sm disabled:opacity-50" disabled>
+                    <button id="checkout-btn" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-orange-500 text-base font-medium text-white hover:bg-orange-600 focus:outline-none sm:ml-3 sm:w-auto sm:text-sm disabled:opacity-50" style="background-color: skyblue;" disabled>
                         Proceed to Checkout
                     </button>
                     <button id="continue-shopping" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">

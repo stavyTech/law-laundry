@@ -1,0 +1,1617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAW-WILLS ENTERPRISE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <style>
+        .hero-bg {
+            /* background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('http://static.photos/food/1200x630/42'); */
+            background-size: cover;
+            background-position: center;
+        }
+        .menu-item:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;  
+        }
+        .cart-btn:hover {
+            background-color:aliceblue;
+            color: white;
+        }
+
+        /* Bubble Animation */
+    /* Washing bubbles animation */
+.bubble {
+    position: absolute;
+    background: skyblue;
+    /* background: rgba(255, 255, 255, 0.65); */
+    border-radius: 50%;
+    backdrop-filter: blur(3px);
+    animation: floatUp s infinite ease-in-out;
+   
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    50% { transform: translateY(-25px) scale(1.15); opacity: 0.85; }
+    100% { transform: translateY(-60px) scale(1); opacity: 0; }
+}
+    
+
+    </style>
+</head>
+<body class="font-sans" >
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-9">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 d-flex flex items-center space-x-2">
+                        <div class="flex items-center space-x-2">
+                <i class="fas fa-tshirt text-2xl text-blue-600" style="color: skyblue;"></i>
+                <span class="font-laila text-xl font-bold text-gray-800">LAWEVER-<b style="color: skyblue;">GREEN</b> </span>
+            </div>
+                         <!-- <img class="h-12 w-auto" src="http://static.photos/food/200x200/1" alt="Savory Bites Logo"> -->
+                        <!-- <span class="text-xl font-bold text-gray-800">LAW-WILLS<b class="text-skyblue-400" style="color: skyblue;">ENTERPRISE</b></span> -->
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-4" style=" padding: 3px 60px; margin: 10px 160px;">
+                             <li class="flex items-center space-x-1">
+                              <i data-feather="home" style="color: skyblue;"></i>
+                          <a href="index.html" class="hover:text-blue-500 ext-blue-500 hover:text-gray-700 px-0 py-0 rounded-md text-sm font-medium">Home</a>
+                         </li>
+                            <!-- <a href="index.html" class="text-blue-500 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium" style="color:black;">Home</a> -->
+                             <li class="flex items-center space-x-1">
+                              <i data-feather="info" style="color: skyblue;"></i>
+                              <a href="#about" class="hover:text-blue-500  text-gray-700 hover:text-blue-500 px-0 py-0 rounded-md text-sm font-medium " >About Us</a>
+                        </li>
+                            <!-- <a href="menu.html" class="text-gray-700 hover:text-gray-500 px-3 py-2 rounded-md text-sm font-medium" style="color: black;">About us</a> -->
+                      
+ <div class="relative group">
+                            <li class="flex items-center space-x-1">
+                                     <i data-feather="shopping-bag" style="color: skyblue;"> </i>
+      <!-- <a href="#shop" class="hover:text-blue-500">Shop</a> -->
+                            <button class="text-dark hover:text-primary transition-colors flex items-center">
+                            Shop
+                            <i class="fas fa-chevron-down ml-1 text-sm"></i>
+                        </button>
+    </li>
+    <div class="absolute top-full left-0 w-48 bg-white shadow-lg rounded-lg p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="bag.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Bags</a>
+                            <a href="shoe.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Shoes</a>
+                            <a href="clothe.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Clothes</a>
+                             <a href="clothe.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Clothes</a>
+                            <a href="perfume.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Perfumes</a>
+                            
+                        </div>
+                        </div>
+                              <!-- <div class="relative group">
+                        <button class="text-dark hover:text-primary transition-colors flex items-center">
+                            Shop
+                            <i class="fas fa-chevron-down ml-1 text-sm"></i>
+                        </button>
+                        <div class="absolute top-full left-0 w-48 bg-white shadow-lg rounded-lg p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="#bag.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Bags</a>
+                            <a href="shoe.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Shoes</a>
+                            <a href="#clothe.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Clothes</a>
+                            
+                        </div>
+                       
+                    </div>  -->
+                    <li class="flex items-center space-x-1">
+                          <i data-feather="phone" style="color: skyblue;"></i>
+                           <a href="contact.html" class="hover:text-blue-500 text-gray-700 hover:text-blue-500 px-0 py-0 rounded-md text-sm font-medium">Contact</a>
+                           </li>
+                      <!-- <a href="contact.html" class="text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium" style="color:black">Contact</a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-4 flex items-center md:ml-6">
+                        <button id="cart-button" class="bg-orange-500 hover:bg-pink-600 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300" onclick="localStorage.setItem('cart', JSON.stringify(cart)); window.location.href='checkout.html';" style="background-color: skyblue;">
+                            <i data-feather="shopping-cart" class="inline mr-1"></i> Cart (<span id="cart-count">0</span>)
+                        </button>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-500 focus:outline-none" style="color: black;">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+             <div class="md:hidden hidden bg-white py-30 px-4 shadow-md" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <li class="flex items-center space-x-1">
+      <i data-feather="home" style="color: skyblue;"></i>
+      <a href="index.html" class="hover:text-blue-500 text-gray-700 hover:text-blue-500 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+    </li>
+                <!-- <a href="index.html" class="text--500 block px-3 py-2 rounded-md text-base font-medium hover:text-blue-500" style="color: black;">Home</a> -->
+                 <li class="flex items-center space-x-1">
+                 <i data-feather="info" style="color: skyblue;"></i>
+                  <a href="about.html" class="hover:text-blue-500 text-gray-700 hover:text-blue-500 block px-3 py-2 rounded-md text-base font-medium">About Us</a>
+                  </li>
+                <!-- <a href="menu.html" class="text-gray-700 hover:text-blue-500 block px-3 py-2 rounded-md text-base font-medium" style="color: black;">About Us</a> -->
+                  <div class="py-4 group relative">
+
+    <li class="flex items-center space-x-1 text-gray-600 hover:text-blue-500 cursor-pointer" style="color: black;">
+        <i data-feather="shopping-bag" style="color: skyblue;"></i>
+
+        <a class="px-3 py-2 flex items-center">
+            Shop 
+            <i class="fas fa-chevron-down ml-1 text-xs" style="color: black;"></i>
+        </a>
+    </li>
+
+    <!-- Dropdown -->
+    <div class="absolute left-0 mt-2 bg-white shadow-md rounded-md w-40 py-2 hidden group-hover:block z-50">
+
+        <a href="bag.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Bags</a>
+
+        <a href="shoe.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Shoes</a>
+
+        <a href="clothe.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Clothes</a>
+          <a href="perfume.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Perfumes</a>
+    </div>
+</div>
+
+
+             <li class="flex items-center space-x-1">
+      <i data-feather="phone" style="color: skyblue;"></i>
+      <a href="contact.html" class="text-gray-700 hover:text-blue-500 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+    </li>
+                <!-- <a href="contact.html" class="text-gray-700 hover:text-blue-500 block px-3 py-2 rounded-md text-base font-medium">Contact</a> -->
+                <button id="mobile-cart-button" class="bg-orange-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium w-full mt-2" style="background-color: skyblue;">
+                    <i data-feather="shopping-cart" class="inline mr-1"></i> Cart (<span id="mobile-cart-count">0</span>)
+                </button>
+            </div>
+        </div>
+        
+    </nav>
+
+
+<!-- HERO SECTION -->
+<section class="relative h-[65vh] flex items-center justify-center text-white overflow-hidden">
+
+    <!-- Washing Bubbles Left -->
+<span class="bubble" style="width: 22px; height: 22px; top: 20%; left: -10px; animation-delay: .2s;"></span>
+<span class="bubble" style="width: 18px; height: 18px; top: 40%; left: -15px; animation-delay: 1.4s;"></span>
+<span class="bubble" style="width: 28px; height: 28px; top: 65%; left: -8px; animation-delay: .9s;"></span>
+
+<!-- Washing Bubbles Center -->
+<span class="bubble" style="width: 14px; height: 14px; top: 18%; left: 45%; animation-delay: .5s;"></span>
+<span class="bubble" style="width: 26px; height: 26px; top: 55%; left: 48%; animation-delay: 1.8s;"></span>
+<span class="bubble" style="width: 20px; height: 20px; top: 72%; left: 50%; animation-delay: 2.4s;"></span>
+
+<!-- Washing Bubbles Right -->
+<span class="bubble" style="width: 25px; height: 25px; top: 12%; right: -10px; animation-delay: 0s;"></span>
+<span class="bubble" style="width: 16px; height: 16px; top: 35%; right: -15px; animation-delay: 1s;"></span>
+<span class="bubble" style="width: 30px; height: 30px; top: 70%; right: -8px; animation-delay: 2s;"></span>
+
+
+    <!-- Background Carousel -->
+    <div class="absolute inset-0 z-0 overflow-hidden">
+        <div class="image-carousel w-full h-full absolute inset-0 bg-cover bg-center opacity-100 transition-opacity duration-1000"></div>
+    </div>
+
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0 bg-black opacity-60 z-10"></div>
+
+    <!-- HERO CONTENT -->
+    <div class="relative z-20 text-center px-6">
+        <h1 id="carousel-title" class="text-4xl md:text-6xl font-bold mb-4 leading-tight transition-opacity duration-1000" style="padding-top: 150px;">
+Fresh Clothes, Zero Stress
+        </h1>
+        <!-- <h2>Professional Laundry & Dry Cleaning</h2> -->
+
+
+        <p id="carousel-text" class="text-lg md:text-xl mb-6 transition-opacity duration-1000">
+            <!-- Leave the laundry to us while you focus on what truly matters. <br> 
+            We deliver expertly cleaned, fresh, and neatly packaged clothes with fast turnaround and reliable pick-up & delivery options. -->
+        </p>
+
+        <div class="flex d-flex sm:flex-row justify-center items-center gap-3 w-full mt-4 h-btn">
+            <a href="#services"
+            class="px-5 py-3 w-90 sm:w-auto text-center bg-green-600 hover:bg-green-700 rounded-md font-semibold" style="background-color: skyblue;">
+            Explore More....
+            </a>
+
+            <a href="#contact"
+            class="px-4 py-3 w-50 sm:w-auto text-center bg-transparent border border-white hover:bg-white hover:text-black rounded-md font-semibold">
+            Contact Us
+            </a>
+        </div>
+
+    </div>
+
+    <!-- INDICATORS -->
+    <div id="carousel-indicators" class="absolute bottom-6 z-30 flex gap-2 justify-center w-full"></div>
+
+</section>
+<!-- CSS -->
+<style>
+.image-carousel {
+    background-size: cover;
+    background-position: center;
+}
+</style>
+
+    <section class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+ <span class="bubble" style="width: 25px; height: 25px; top: 10%; right: 20%; animation-delay: 0s;"></span>
+    <span class="bubble" style="width: 15px; height: 15px; top: 25%; right: 5%; animation-delay: 1s;"></span>
+    <span class="bubble" style="width: 20px; height: 20px; top: 40%; right: 15%; animation-delay: 2s;"></span>
+    <span class="bubble" style="width: 18px; height: 18px; top: 60%; right: 10%; animation-delay: 3s;"></span>
+    <span class="bubble" style="width: 30px; height: 30px; top: 75%; right: 25%; animation-delay: 1.5s;"></span>
+        <h2 class="text-3xl font-bold text-center mb-16 font-laila" style="color: skyblue;">
+            Feauterd Product
+        </h2>
+
+        <!-- Swiper Container -->
+        <div class="swiper myProductSwiper">
+            <div class="swiper-wrapper">
+ <span class="bubble" style="width: 25px; height: 25px; top: 10%; right: 20%; animation-delay: 0s;"></span>
+    <span class="bubble" style="width: 15px; height: 15px; top: 25%; right: 5%; animation-delay: 1s;"></span>
+    <span class="bubble" style="width: 20px; height: 20px; top: 40%; right: 15%; animation-delay: 2s;"></span>
+    <span class="bubble" style="width: 18px; height: 18px; top: 60%; right: 10%; animation-delay: 3s;"></span>
+    <span class="bubble" style="width: 30px; height: 30px; top: 75%; right: 25%; animation-delay: 1.5s;"></span>
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                        <div class="h-48 bg-[url('https://images.unsplash.com/photo-1597633125184-9fd7e54f0ff7?q=80&w=435&auto=format&fit=crop')] bg-cover bg-center"></div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 font-laila">Stylish Bags for Every Occasion</h3>
+                            <p class="text-gray-600 mb-4 font-montserrat">
+                                Explore quality bags that combine durability with elegance—perfect for work, travel, and everyday fashion.
+                            </p>
+                            <a href="products/cocoa.html" class="text-blue-600 font-medium flex items-center" style="color: skyblue;">
+                                View More <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                        <div class="h-48 bg-[url('https://images.unsplash.com/photo-1521774971864-62e842046145?q=80&w=869&auto=format&fit=crop')] bg-cover bg-center"></div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 font-laila">Footwear Designed for Comfort</h3>
+                            <p class="text-gray-600 mb-4 font-montserrat">
+                                Discover premium shoes crafted with style, durability, and all-day comfort in mind for any event or lifestyle.
+                            </p>
+                            <a href="products/cattle.html" class="text-blue-600 font-medium flex items-center" style="color: skyblue;">
+                                View More <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                        <div class="h-48 bg-[url('https://images.unsplash.com/photo-1583316174775-bd6dc0e9f298?q=80&w=870&auto=format&fit=crop')] bg-cover bg-center"></div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 font-laila">Fashion That Fits Your Lifestyle</h3>
+                            <p class="text-gray-600 mb-4 font-montserrat">
+                                Upgrade your wardrobe with stylish, premium outfits that combine comfort, confidence, and elegance.
+                            </p>
+                            <a href="products/fruits.html" class="text-blue-600 font-medium flex items-center" style="color: skyblue;">
+                                View More <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <!-- Slide 4 -->
+                <div class="swiper-slide">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                        <div class="h-48 bg-[url('https://images.unsplash.com/photo-1559563458-527698bf5295?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center"></div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 font-laila">Fashion That Fits Your Lifestyle</h3>
+                            <p class="text-gray-600 mb-4 font-montserrat">
+                                Upgrade your wardrobe with stylish, premium outfits that combine comfort, confidence, and elegance.
+                            </p>
+                            <a href="products/fruits.html" class="text-blue-600 font-medium flex items-center" style="color: skyblue;">
+                                View More <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <!-- Slide 5-->
+                <div class="swiper-slide">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                        <div class="h-48 bg-[url('https://images.unsplash.com/photo-1594750863984-8be99377ce41?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center"></div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 font-laila">Fashion That Fits Your Lifestyle</h3>
+                            <p class="text-gray-600 mb-4 font-montserrat">
+                                Upgrade your wardrobe with stylish, premium outfits that combine comfort, confidence, and elegance.
+                            </p>
+                            <a href="products/fruits.html" class="text-blue-600 font-medium flex items-center" style="color: skyblue;">
+                                View More <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                       
+                <!-- Slide 6-->
+                <div class="swiper-slide">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                        <div class="h-48 bg-[url('https://images.unsplash.com/photo-1635796332668-78830169097d?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center"></div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 font-laila">Fashion That Fits Your Lifestyle</h3>
+                            <p class="text-gray-600 mb-4 font-montserrat">
+                                Upgrade your wardrobe with stylish, premium outfits that combine comfort, confidence, and elegance.
+                            </p>
+                            <a href="products/fruits.html" class="text-blue-600 font-medium flex items-center" style="color: skyblue;">
+                                View Deta <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                       
+                <!-- Slide 7-->
+                <div class="swiper-slide">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                        <div class="h-48 bg-[url('https://plus.unsplash.com/premium_photo-1723925110801-110c00d392a3?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center"></div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 font-laila">Fashion That Fits Your Lifestyle</h3>
+                            <p class="text-gray-600 mb-4 font-montserrat">
+                                Upgrade your wardrobe with stylish, premium outfits that combine comfort, confidence, and elegance.
+                            </p>
+                            <a href="products/fruits.html" class="text-blue-600 font-medium flex items-center" style="color: skyblue;">
+                                View More <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                       
+                <!-- Slide 8-->
+                <div class="swiper-slide">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                        <div class="h-48 bg-[url('https://images.unsplash.com/photo-1459712105412-be146fae746d?q=80&w=874&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center"></div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 font-laila">Fashion That Fits Your Lifestyle</h3>
+                            <p class="text-gray-600 mb-4 font-montserrat">
+                                Upgrade your wardrobe with stylish, premium outfits that combine comfort, confidence, and elegance.
+                            </p>
+                            <a href="products/fruits.html" class="text-blue-600 font-medium flex items-center" style="color: skyblue;">
+                                View More <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                       
+                <!-- Slide 9-->
+                <div class="swiper-slide">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                        <div class="h-48 bg-[url('https://images.unsplash.com/photo-1583316174775-bd6dc0e9f298?q=80&w=870&auto=format&fit=crop')] bg-cover bg-center"></div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 font-laila">Fashion That Fits Your Lifestyle</h3>
+                            <p class="text-gray-600 mb-4 font-montserrat">
+                                Upgrade your wardrobe with stylish, premium outfits that combine comfort, confidence, and elegance.
+                            </p>
+                            <a href="products/fruits.html" class="text-blue-600 font-medium flex items-center" style="color: skyblue;">
+                                View More <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                       
+                <!-- Slide 10-->
+                <div class="swiper-slide">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                        <div class="h-48 bg-[url('https://plus.unsplash.com/premium_photo-1723826750819-02ee8f2e5a0c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDI4fHx8ZW58MHx8fHx8')] bg-cover bg-center"></div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 font-laila">Fashion That Fits Your Lifestyle</h3>
+                            <p class="text-gray-600 mb-4 font-montserrat">
+                                Upgrade your wardrobe with stylish, premium outfits that combine comfort, confidence, and elegance.
+                            </p>
+                            <a href="products/fruits.html" class="text-blue-600 font-medium flex items-center" style="color: skyblue;">
+                                View More <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Arrows -->
+            <!-- <div class="swiper-button-next text-sky-500"></div>
+            <div class="swiper-button-prev text-sky-500"></div> -->
+ <!-- Indicators -->
+            <!-- <div class="swiper-pagination mt-5" style="padding-top: 200px;"  ></div> -->
+          
+        </div>
+
+         
+
+        <!-- <div class="text-center mt-1" style="padding-top: 100px;">
+            <a href="shop.html" class="inline-block bg-white-600 hover:bg-black-700 text-white px-6 py-3 rounded-lg font-medium transition" style="background-color: skyblue;">
+            Shop From Our Collections
+            </a>
+        </div> -->
+    </div>
+</section>
+
+  <section class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex overflow-x-auto pb-4 mb-8 hide-scrollbar">
+                <div class="flex space-x-2">
+                    <button class="category-btn active px-6 py-2 rounded-full bg-orange-500 text-white whitespace-nowrap" data-category="all" style="background-color: skyblue;">All Items</button>
+                    <button class="category-btn px-6 py-2 rounded-full bg-white border border-gray-300 whitespace-nowrap" data-category="bags">Bags</button>
+                    <button class="category-btn px-6 py-2 rounded-full bg-white border border-gray-300 whitespace-nowrap" data-category="shoes">Shoes</button>
+                    <button class="category-btn px-6 py-2 rounded-full bg-white border border-gray-300 whitespace-nowrap" data-category="clothes">Clothes</button>
+                    <button class="category-btn px-6 py-2 rounded-full bg-white border border-gray-300 whitespace-nowrap" data-category="sneakers">Sneakers</button>
+                    <button class="category-btn px-6 py-2 rounded-full bg-white border border-gray-300 whitespace-nowrap" data-category="perfumes">Perfumes</button>
+                </div>
+            </div>
+            <!-- shop Items -->
+            <!-- Bags Category -->
+            <div class="mb-16" data-category="bags">
+                <h2 class="text-2xl font-bold mb-6 pb-2 border-b border-gray-200">Bags</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Item 1 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up">
+                        <img src="https://images.unsplash.com/photo-1597633125184-9fd7e54f0ff7?q=80&w=435&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gucci Bag" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Gucci Bag</h3>
+                            <p class="text-gray-600 mb-4"> Best Fashion Brand for Hand Bags </p>
+                            <div class="flex justify-between items-center">
+                                 <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦1,800</span>
+                                 <!-- <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">$18000</span> -->
+                            <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="3" data-name="Gucci Bag" data-price="1800">
+                                <i data-feather="plus" class="inline mr-1"></i> Add
+                            </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://images.unsplash.com/photo-1594223274512-ad4803739b7c?q=80&w=457&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Turte Bag" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Turte Bag</h3>
+                            <p class="text-gray-600 mb-4">Buttery pastry filled with succulent chicken chunks and vegetables</p>
+                            <div class="flex justify-between items-center">
+                               <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦1,800</span>
+                               <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">$18000</span>
+                            <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="3" data-name="Spring Rolls" data-price="1800">
+                                <i data-feather="plus" class="inline mr-1"></i> Add
+                            </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1738653926597-6923cde1b38b?q=80&w=435&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Sausage Roll" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">louis Vitn</h3>
+                            <p class="text-gray-600 mb-4">Flaky pastry wrapped around juicy sausage with special seasoning</p>
+                            <div class="flex justify-between items-center">
+                                 <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦1,800</span>
+                                 <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">$18000</span>
+                            <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="3" data-name="Spring Rolls" data-price="1800">
+                                <i data-feather="plus" class="inline mr-1"></i> Add
+                            </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shoe Category -->
+            <div class="mb-16" data-category="shoe">
+                <h2 class="text-2xl font-bold mb-6 pb-2 border-b border-gray-200">Shoes</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Item 1 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up">
+                        <img src="https://images.unsplash.com/photo-1610398752800-146f269dfcc8?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Boot Heel" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Boot Heel</h3>
+                            <p class="text-gray-600 mb-4">Crispy pastry filled with spiced chicken and vegetables</p>
+                            <div class="flex justify-between items-center">
+                                 <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦1,800</span>
+                            <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="3" data-name="Boot Heel" data-price="1800">
+                                <i data-feather="plus" class="inline mr-1"></i> Add
+                            </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://images.unsplash.com/photo-1670243322279-727e3d9df08d?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="High Heel" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">High Heel</h3>
+                            <p class="text-gray-600 mb-4">Triangular pastry pockets filled with spiced minced beef</p>
+                            <div class="flex justify-between items-center">
+                                 <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦1,800</span>
+                            <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="3" data-name="High Heel" data-price="1800">
+                                <i data-feather="plus" class="inline mr-1"></i> Add
+                            </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1710897941273-7bf3ba9f0108?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="White Heels" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">White Heels</h3>
+                            <p class="text-gray-600 mb-4">Juicy chicken wings marinated in our special spicy sauce</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦2,500</span>
+                                <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="6" data-name="white Heels" data-price="2500">
+                                    <i data-feather="plus" class="inline mr-1"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- clothes Category -->
+            <div class="mb-16" data-category="clothes">
+                <h2 class="text-2xl font-bold mb-6 pb-2 border-b border-gray-200">Clothes</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Item 1 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up">
+                        <img src="https://plus.unsplash.com/premium_photo-1675186049366-64a655f8f537?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Vegetable Spring Rolls" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Red Jacket</h3>
+                            <p class="text-gray-600 mb-4">Crispy rolls filled with fresh vegetables and special seasoning</p>
+                            <div class="flex justify-between items-center">
+                                 <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦1,800</span>
+                            <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="3" data-name="Red Jacket" data-price="1800">
+                                <i data-feather="plus" class="inline mr-1"></i> Add
+                            </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://images.unsplash.com/photo-1649937408746-4d2f603f91c8?q=80&w=626&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Vegetable Samosa" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Winter Jacket</h3>
+                            <p class="text-gray-600 mb-4">Spiced potato and vegetable filling in crispy pastry</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦1,800</span>
+                            <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="3" data-name="Winter Jacket" data-price="1800">
+                                <i data-feather="plus" class="inline mr-1"></i> Add
+                            </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1611312449408-fcece27cdbb7?q=80&w=369&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Stuffed Mushrooms" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Jean Jacket</h3>
+                            <p class="text-gray-600 mb-4">Button mushrooms stuffed with breadcrumbs and herbs</p>
+                            <div class="flex justify-between items-center">
+                                 <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦1,800</span>
+                            <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="3" data-name="White Heels" data-price="1800">
+                                <i data-feather="plus" class="inline mr-1"></i> Add
+                            </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sneakers Category -->
+            <div class="mb-16" data-category="special">
+                <h2 class="text-2xl font-bold mb-6 pb-2 border-b border-gray-200">Sneakers</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Item 1 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up">
+                        <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Mini Beef Burger" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Mini Beef Burger</h3>
+                            <p class="text-gray-600 mb-4">Juicy beef patty with cheese, lettuce and special sauce</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦1,800</span>
+                            <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="3" data-name="Spring Rolls" data-price="1800">
+                                <i data-feather="plus" class="inline mr-1"></i> Add
+                            </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://images.unsplash.com/photo-1601144537844-c2a0494aeb41?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Nike Airforce" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Nike Airforce</h3>
+                            <p class="text-gray-600 mb-4">Tender chicken fillet with cheese and special sauce</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦2,300</span>
+                                <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="11" data-name="Nike Airforce" data-price="2300">
+                                    <i data-feather="plus" class="inline mr-1"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="f fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1595341888016-a392ef81b7de?q=80&w=879&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Puff Puff" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">K-Swiss</h3>
+                            <p class="text-gray-600 mb-4">Soft, fluffy dough balls with a hint of nutmeg</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦1,000</span>
+                                <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="12" data-name="K-Swiss" data-price="1000">
+                                    <i data-feather="plus" class="inline mr-1"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Perfumes Category -->
+            <div class="mb-16" data-category="perfumes">
+                <h2 class="text-2xl font-bold mb-6 pb-2 border-b border-gray-200">Perfumes</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Item 1 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up">
+                        <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Perfume coco A" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">perfume coco</h3>
+                            <p class="text-gray-600 mb-4">2 Meat Pies, 2 Chicken Samosas, 2 Spring Rolls, 6 Puff Puff</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦6,500</span>
+                                <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="13" data-name="perfume coco" data-price="6500">
+                                    <i data-feather="plus" class="inline mr-1"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Blue De Channel" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Blue De Channel</h3>
+                            <p class="text-gray-600 mb-4">2 Chicken Pies, 2 Beef Samosas, 2 Mini Burgers, 6 Puff Puff</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦7,800</span>
+                                <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="14" data-name="Blue De Channel" data-price="7800">
+                                    <i data-feather="plus" class="inline mr-1"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Party Pack" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Poeme</h3>
+                            <p class="text-gray-600 mb-4">10 Meat Pies, 10 Chicken Samosas, 10 Spring Rolls, 20 Puff Puff</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦25,000</span>
+                                <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="15" data-name="Poeme" data-price="25000">
+                                    <i data-feather="plus" class="inline mr-1"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                      <!-- Item 4 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Party Pack" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Poeme</h3>
+                            <p class="text-gray-600 mb-4">10 Meat Pies, 10 Chicken Samosas, 10 Spring Rolls, 20 Puff Puff</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦25,000</span>
+                                <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="15" data-name="Poeme" data-price="25000">
+                                    <i data-feather="plus" class="inline mr-1"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                      <!-- Item 5 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Party Pack" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Poeme</h3>
+                            <p class="text-gray-600 mb-4">10 Meat Pies, 10 Chicken Samosas, 10 Spring Rolls, 20 Puff Puff</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦25,000</span>
+                                <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="15" data-name="Poeme" data-price="25000">
+                                    <i data-feather="plus" class="inline mr-1"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                      <!-- Item 6 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Party Pack" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Poeme</h3>
+                            <p class="text-gray-600 mb-4">10 Meat Pies, 10 Chicken Samosas, 10 Spring Rolls, 20 Puff Puff</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦25,000</span>
+                                <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="15" data-name="Poeme" data-price="25000">
+                                    <i data-feather="plus" class="inline mr-1"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                      <!-- Item 7 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Party Pack" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Poeme</h3>
+                            <p class="text-gray-600 mb-4">10 Meat Pies, 10 Chicken Samosas, 10 Spring Rolls, 20 Puff Puff</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦25,000</span>
+                                <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="15" data-name="Poeme" data-price="25000">
+                                    <i data-feather="plus" class="inline mr-1"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                      <!-- Item 9 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Party Pack" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Poeme</h3>
+                            <p class="text-gray-600 mb-4">10 Meat Pies, 10 Chicken Samosas, 10 Spring Rolls, 20 Puff Puff</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦25,000</span>
+                                <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="15" data-name="Poeme" data-price="25000">
+                                    <i data-feather="plus" class="inline mr-1"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                      <!-- Item 10 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Party Pack" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Poeme</h3>
+                            <p class="text-gray-600 mb-4">10 Meat Pies, 10 Chicken Samosas, 10 Spring Rolls, 20 Puff Puff</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦25,000</span>
+                                <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="15" data-name="Poeme" data-price="25000">
+                                    <i data-feather="plus" class="inline mr-1"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                      <!-- Item 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Party Pack" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Poeme</h3>
+                            <p class="text-gray-600 mb-4">10 Meat Pies, 10 Chicken Samosas, 10 Spring Rolls, 20 Puff Puff</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦25,000</span>
+                                <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="15" data-name="Poeme" data-price="25000">
+                                    <i data-feather="plus" class="inline mr-1"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                      <!-- Item 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Party Pack" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Poeme</h3>
+                            <p class="text-gray-600 mb-4">10 Meat Pies, 10 Chicken Samosas, 10 Spring Rolls, 20 Puff Puff</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦25,000</span>
+                                <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="15" data-name="Poeme" data-price="25000">
+                                    <i data-feather="plus" class="inline mr-1"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                      <!-- Item 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Party Pack" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Poeme</h3>
+                            <p class="text-gray-600 mb-4">10 Meat Pies, 10 Chicken Samosas, 10 Spring Rolls, 20 Puff Puff</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦25,000</span>
+                                <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="15" data-name="Poeme" data-price="25000">
+                                    <i data-feather="plus" class="inline mr-1"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                      <!-- Item 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Party Pack" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Poeme</h3>
+                            <p class="text-gray-600 mb-4">10 Meat Pies, 10 Chicken Samosas, 10 Spring Rolls, 20 Puff Puff</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦25,000</span>
+                                <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="15" data-name="Poeme" data-price="25000">
+                                    <i data-feather="plus" class="inline mr-1"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                      <!-- Item 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Party Pack" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Poeme</h3>
+                            <p class="text-gray-600 mb-4">10 Meat Pies, 10 Chicken Samosas, 10 Spring Rolls, 20 Puff Puff</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦25,000</span>
+                                <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="15" data-name="Poeme" data-price="25000">
+                                    <i data-feather="plus" class="inline mr-1"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                      <!-- Item 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Party Pack" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Poeme</h3>
+                            <p class="text-gray-600 mb-4">10 Meat Pies, 10 Chicken Samosas, 10 Spring Rolls, 20 Puff Puff</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦25,000</span>
+                                <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="15" data-name="Poeme" data-price="25000">
+                                    <i data-feather="plus" class="inline mr-1"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                      <!-- Item 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Party Pack" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Poeme</h3>
+                            <p class="text-gray-600 mb-4">10 Meat Pies, 10 Chicken Samosas, 10 Spring Rolls, 20 Puff Puff</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦25,000</span>
+                                <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="15" data-name="Poeme" data-price="25000">
+                                    <i data-feather="plus" class="inline mr-1"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                      <!-- Item 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Party Pack" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Poeme</h3>
+                            <p class="text-gray-600 mb-4">10 Meat Pies, 10 Chicken Samosas, 10 Spring Rolls, 20 Puff Puff</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦25,000</span>
+                                <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="15" data-name="Poeme" data-price="25000">
+                                    <i data-feather="plus" class="inline mr-1"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                      <!-- Item 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Party Pack" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Poeme</h3>
+                            <p class="text-gray-600 mb-4">10 Meat Pies, 10 Chicken Samosas, 10 Spring Rolls, 20 Puff Puff</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦25,000</span>
+                                <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="15" data-name="Poeme" data-price="25000">
+                                    <i data-feather="plus" class="inline mr-1"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                      <!-- Item 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Party Pack" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Poeme</h3>
+                            <p class="text-gray-600 mb-4">10 Meat Pies, 10 Chicken Samosas, 10 Spring Rolls, 20 Puff Puff</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦25,000</span>
+                                <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="15" data-name="Poeme" data-price="25000">
+                                    <i data-feather="plus" class="inline mr-1"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                      <!-- Item 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Party Pack" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Poeme</h3>
+                            <p class="text-gray-600 mb-4">10 Meat Pies, 10 Chicken Samosas, 10 Spring Rolls, 20 Puff Puff</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦25,000</span>
+                                <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="15" data-name="Poeme" data-price="25000">
+                                    <i data-feather="plus" class="inline mr-1"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                      <!-- Item 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Party Pack" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Poeme</h3>
+                            <p class="text-gray-600 mb-4">10 Meat Pies, 10 Chicken Samosas, 10 Spring Rolls, 20 Puff Puff</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦25,000</span>
+                                <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="15" data-name="Poeme" data-price="25000">
+                                    <i data-feather="plus" class="inline mr-1"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                      <!-- Item 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Party Pack" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Poeme</h3>
+                            <p class="text-gray-600 mb-4">10 Meat Pies, 10 Chicken Samosas, 10 Spring Rolls, 20 Puff Puff</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦25,000</span>
+                                <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="15" data-name="Poeme" data-price="25000">
+                                    <i data-feather="plus" class="inline mr-1"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                      <!-- Item 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Party Pack" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Poeme</h3>
+                            <p class="text-gray-600 mb-4">10 Meat Pies, 10 Chicken Samosas, 10 Spring Rolls, 20 Puff Puff</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦25,000</span>
+                                <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="15" data-name="Poeme" data-price="25000">
+                                    <i data-feather="plus" class="inline mr-1"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                      <!-- Item 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden menu-item" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Party Pack" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Poeme</h3>
+                            <p class="text-gray-600 mb-4">10 Meat Pies, 10 Chicken Samosas, 10 Spring Rolls, 20 Puff Puff</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-skyblue-500 font-bold text-lg" style="color: skyblue;">₦25,000</span>
+                                <button class="cart-btn bg-gray-100 hover:bg-skyblue-500 text-skyblue-500 px-4 py-2 rounded-md text-sm font-medium transition duration-300" style="background-color: skyblue;" data-id="15" data-name="Poeme" data-price="25000">
+                                    <i data-feather="plus" class="inline mr-1"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- ************************************ -->
+ 
+  <!-- Team Section -->
+   
+
+    <!-- Testimonial Preview -->
+      <span class="bubble" style="width: 25px; height: 25px; top: 10%; right: 20%; animation-delay: 0s;"></span>
+    <span class="bubble" style="width: 15px; height: 15px; top: 25%; right: 5%; animation-delay: 1s;"></span>
+    <span class="bubble" style="width: 20px; height: 20px; top: 40%; right: 15%; animation-delay: 2s;"></span>
+    <span class="bubble" style="width: 18px; height: 18px; top: 60%; right: 10%; animation-delay: 3s;"></span>
+    <span class="bubble" style="width: 30px; height: 30px; top: 75%; right: 25%; animation-delay: 1.5s;"></span>
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Don't just take our word for it - hear from our satisfied customers</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-50 p-6 rounded-lg" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <img src="http://static.photos/people/200x200/1" alt="Amina Bello" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Daniel Williams</h4>
+                            <div class="flex text-orange-400">
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"The small chops were absolutely delicious! Perfectly seasoned and the pastry was so flaky. Will definitely order again for my next gathering."</p>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-50 p-6 rounded-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <img src="http://static.photos/people/200x200/2" alt="Tunde Williams" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Mabel Williams</h4>
+                            <div class="flex text-orange-400">
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Savory Bites handled my daughter's graduation party and everything was perfect! The food was amazing and their attention to detail was impressive."</p>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="bg-gray-50 p-6 rounded-lg" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-4">
+                        <img src="http://static.photos/people/200x200/3" alt="Chioma Okeke" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Williams Favour</h4>
+                            <div class="flex text-orange-400">
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"I've tried many small chops vendors but Savory Bites is in a class of their own. The quality is consistently excellent and delivery is always on time."</p>
+                </div>
+            </div>
+            <div class="text-center mt-10">
+                <a href="testimonials.html" class="inline-block px-6 py-3 border border-skylue text-base font-medium rounded-md text-skyblue-500 border-blue-500 hover:bg-skyblue-50 transition duration-300" style="border: 1px solid skyblue;">
+                    Read More Testimonials
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-16 bg-blue-500 text-white" style="background-color: skyblue;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
+            <h2 class="text-3xl font-bold mb-4">Join Our Newsletter</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Subscribe to get updates on new menu items, special offers, and event planning tips</p>
+            <form class="max-w-md mx-auto flex">
+                <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-l-md focus:outline-none text-gray-900">
+                <button type="submit" class="bg-gray-900 hover:bg-gray-800 px-6 py-3 rounded-r-md font-medium transition duration-300">
+                    Subscribe
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                 <div class="flex items-center space-x-2">
+                <i class="fas fa-tshirt text-2xl text-blue-600" style="color: skyblue;"></i>
+                <span class="font-laila text-xl font-bold text-white-800">LAWEVER-<b style="color: skyblue;">GREEN</b> </span>
+            </div>
+                    <p class="text-gray-400 mb-4">Premium small chops and professional event planning services for all occasions.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white" style="color: white;">
+                            <i data-feather="facebook" style="color: white;"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white" style="color: white;">
+                            <i data-feather="instagram" style="color: white;"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white" style="color: white;">
+                            <i data-feather="twitter" style=""></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white" style="color: white;">
+                            <i data-feather="tik-tok"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4" style="color: skyblue;">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="menu.html" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="events.html" class="text-gray-400 hover:text-white">Shop</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">Contact Us</a></li>
+                        
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4" style="color: skyblue;">Contact Us</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i data-feather="map-pin" class="mr-2 mt-1" style="color: white;"></i>
+                            <span>rukpo-okwu rivers state</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="phone" class="mr-2 mt-1" style="color: white;"></i>
+                            <span>+234 814 759 9784</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="mail" class="mr-2 mt-1" style="color: white;"></i>
+                            <span>lawevergreeb@gmail.com.com</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4" style="color: skyblue;">Opening Hours</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex justify-between">
+                            <span>Monday - Friday</span>
+                            <span>8am - 8pm</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Saturday</span>
+                            <span>9am - 10pm</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Sunday</span>
+                            <span>10am - 6pm</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400" style="color: skyblue;">
+                <p>&copy; 2025 Stavytech. All rights reserved.</p>
+            </div>
+
+           
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Modal -->
+    <div id="cart-modal" class="fixed inset-0 z-50 hidden overflow-y-auto">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+                <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+            </div>
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <div class="flex justify-between items-center border-b pb-4 mb-4">
+                        <h3 class="text-lg font-medium text-gray-900">Your Order (<span id="modal-cart-count">0</span>)</h3>
+                        <button id="close-cart" class="text-gray-400 hover:text-gray-500">
+                            <i data-feather="x"></i>
+                        </button>
+                    </div>
+                    <div id="cart-items" class="max-h-96 overflow-y-auto">
+                        <!-- Cart items will be added here dynamically -->
+                        <p class="text-gray-500 text-center py-8" id="empty-cart-message">Your cart is empty</p>
+                    </div>
+                    <div class="border-t mt-4 pt-4">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium">Subtotal:</span>
+                            <span id="cart-subtotal">₦0</span>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium">Delivery Fee:</span>
+                            <span id="delivery-fee">₦1,500</span>
+                        </div>
+                        <div class="flex justify-between text-lg font-bold">
+                            <span>Total:</span>
+                            <span id="cart-total">₦1,500</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                    <button id="checkout-btn" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-orange-500 text-base font-medium text-white hover:bg-orange-600 focus:outline-none sm:ml-3 sm:w-auto sm:text-sm disabled:opacity-50" style="background-color: skyblue;" disabled>
+                        Proceed to Checkout
+                    </button>
+                    <button id="continue-shopping" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+                        Continue Shopping
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Initialize feather icons
+        feather.replace();
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Shopping cart functionality with localStorage fallback
+        let cart = [];
+        try {
+            const cartData = localStorage.getItem('cart');
+            cart = cartData ? JSON.parse(cartData) : [];
+        } catch (e) {
+            console.warn('localStorage access blocked:', e);
+            cart = [];
+        }
+        
+        function updateCartCount() {
+            const count = cart.reduce((total, item) => total + item.quantity, 0);
+            document.getElementById('cart-count').textContent = count;
+            document.getElementById('mobile-cart-count').textContent = count;
+            document.getElementById('modal-cart-count').textContent = count;
+        }
+        
+        function updateCartModal() {
+            const cartItems = document.getElementById('cart-items');
+            const emptyMessage = document.getElementById('empty-cart-message');
+            const checkoutBtn = document.getElementById('checkout-btn');
+            
+            if (cart.length === 0) {
+                emptyMessage.classList.remove('hidden');
+                checkoutBtn.disabled = true;
+                cartItems.innerHTML = '<p class="text-gray-500 text-center py-8" id="empty-cart-message">Your cart is empty</p>';
+                return;
+            }
+            
+            emptyMessage.classList.add('hidden');
+            checkoutBtn.disabled = false;
+            
+            let itemsHTML = '';
+            let subtotal = 0;
+            
+            cart.forEach((item, index) => {
+                const itemTotal = item.price * item.quantity;
+                subtotal += itemTotal;
+                
+                itemsHTML += `
+                    <div class="flex justify-between items-center py-4 border-b">
+                        <div>
+                            <h4 class="font-medium">${item.name}</h4>
+                            <p class="text-gray-500 text-sm">₦${item.price.toLocaleString()} × ${item.quantity}</p>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="font-medium mr-6">₦${itemTotal.toLocaleString()}</span>
+                            <button class="remove-item text-red-500 hover:text-red-700" data-index="${index}">
+                                <i data-feather="trash-2" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            cartItems.innerHTML = itemsHTML;
+            document.getElementById('cart-subtotal').textContent = `₦${subtotal.toLocaleString()}`;
+            document.getElementById('cart-total').textContent = `₦${(subtotal + 1500).toLocaleString()}`;
+            
+            // Reattach event listeners to remove buttons
+            document.querySelectorAll('.remove-item').forEach(button => {
+                button.addEventListener('click', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    cart.splice(index, 1);
+                    try {
+                        localStorage.setItem('cart', JSON.stringify(cart));
+                    } catch (e) {
+                        console.warn('Could not save cart:', e);
+                    }
+                    updateCartCount();
+                    updateCartModal();
+                    feather.replace();
+                });
+            });
+            
+            feather.replace();
+        }
+        
+        // Add to cart buttons
+        document.querySelectorAll('.cart-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const id = this.getAttribute('data-id');
+                const name = this.getAttribute('data-name');
+                const price = parseInt(this.getAttribute('data-price'));
+                
+                const existingItem = cart.find(item => item.id === id);
+                
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    // determine an image for the item (try data attribute, then nearby img)
+                    const itemEl = this.closest('.menu-item');
+                    const imgEl = itemEl ? itemEl.querySelector('img') : null;
+                    const image = this.getAttribute('data-image') || (imgEl ? imgEl.src : 'http://static.photos/food/200x200/1');
+                    cart.push({
+                        id: String(id),
+                        name,
+                        price,
+                        image,
+                        quantity: 1
+                    });
+                }
+                
+                try {
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                } catch (e) {
+                    console.warn('Could not save cart:', e);
+                }
+                updateCartCount();
+                
+                // Show a quick notification
+                const notification = document.createElement('div');
+                notification.className = 'fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-md shadow-lg animate-bounce';
+                notification.textContent = `${name} added to cart!`;
+                document.body.appendChild(notification);
+                
+                setTimeout(() => {
+                    notification.remove();
+                }, 1200);
+
+                // Redirect to checkout so user sees the cart (short delay to show notification)
+                setTimeout(() => {
+                    window.location.href = 'checkout.html';
+                }, 1400);
+            });
+        });
+        
+        // Cart modal controls
+        document.querySelectorAll('[id^="cart-count"]').forEach(element => {
+            element.addEventListener('click', function() {
+                document.getElementById('cart-modal').classList.remove('hidden');
+                updateCartModal();
+            });
+        });
+        
+        document.getElementById('close-cart').addEventListener('click', function() {
+            document.getElementById('cart-modal').classList.add('hidden');
+        });
+        
+        document.getElementById('continue-shopping').addEventListener('click', function() {
+            document.getElementById('cart-modal').classList.add('hidden');
+        });
+        
+        document.getElementById('checkout-btn').addEventListener('click', function() {
+                try {
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                } catch (ex) {
+                    console.warn('Could not save cart:', ex);
+                }
+                window.location.href = 'checkout.html';
+        });
+        
+        // Initialize cart count on page load
+        updateCartCount();
+
+        // Listen for cart updates from other tabs/windows
+        window.addEventListener('storage', (e) => {
+            if (e.key === 'cart') {
+                try {
+                    cart = JSON.parse(e.newValue) || [];
+                } catch (err) {
+                    cart = [];
+                }
+                updateCartCount();
+            }
+        });
+
+        // Handle cart button click with localStorage error handling
+        const cartBtn = document.getElementById('cart-button');
+        if (cartBtn) {
+            cartBtn.addEventListener('click', function(e) {
+                try {
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                } catch (ex) {
+                    console.warn('Could not save cart to localStorage:', ex);
+                }
+                window.location.href = 'checkout.html';
+            });
+        }
+
+        // Handle mobile cart button click
+        const mobileCartBtn = document.getElementById('mobile-cart-button');
+        if (mobileCartBtn) {
+            mobileCartBtn.addEventListener('click', function(e) {
+                try {
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                } catch (ex) {
+                    console.warn('Could not save cart to localStorage:', ex);
+                }
+                window.location.href = 'checkout.html';
+            });
+        }
+// ********CAROUSEL SLIDES AND INDICATOR**************
+
+const slides = [
+    {
+        img: "https://i.pinimg.com/736x/31/47/4e/31474e3067b534b0f92cf00de0221aad.jpg",
+        title: "Premium Laundry Services",
+        subtitle: "Professional Laundry & Dry Cleaning.",
+        text: "Leave the laundry to us while you focus on what truly matters."
+        // text: "Leave the laundry to us while you focus on what truly matters. We deliver expertly cleaned, fresh,  and neatly packaged clothes with fast turnaround and reliable pick-up & delivery options."
+    },
+    {
+        img: "https://images.unsplash.com/photo-1579108189501-b3af293abbf8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEzfHx8ZW58MHx8fHx8",
+        title: "Dress the Way You Desire",
+        subtitle: " Quality Wears for Every Lifestyle",
+        text: "Shop stylish, comfortable, and affordable fashion pieces for any occasion."
+        // text: "Shop stylish, comfortable, and affordable fashion pieces for any occasion. From casual outfits to elegant looks, we bring top-quality wears that help you stand out effortlessly."
+    },
+    {
+        img: "https://images.unsplash.com/photo-1659450013573-b2d6b39f916a?q=80&w=771&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        title: "Smell Irresistible Every Day",
+        subtitle:"Luxury Fragrances That Last",
+         text: "Treat yourself to captivating scents that define your presence."
+        // text: "Treat yourself to captivating scents that define your presence. Long-lasting, premium-quality perfumes that keep you smelling fresh, confident, and unforgettable all day long."
+    },
+    {
+        img: "https://i.pinimg.com/736x/94/81/12/9481129e4d894aabbd2d93c32159b797.jpg",
+        title: "Step Into Style & Comfort",
+        subtitle: "Trendy Footwear Handpicked for You",
+        text:"Walk with confidence in shoes designed for comfort, class, and everyday use."
+        // text:"Walk with confidence in shoes designed for comfort, class, and everyday use. Explore our variety of fashionable sneakers, heels, sandals, and more—crafted to make every step count."
+    },
+    {
+        style: "background-color: #f0e68c;",
+        img: "https://i.pinimg.com/1200x/5a/0e/aa/5a0eaa3dfb412501008b1a0188b6a3c5.jpg",
+        title: "Carry Confidence Everywhere",
+        subtitle:"Premium Bags for Every Occasion",
+        text: "Discover stylish and durable bags that elevate your look effortlessly."
+        // text: "Discover stylish and durable bags that elevate your look effortlessly. From casual outings to work-ready designs, our curated collection gives you elegance, comfort, and quality at the best prices."
+    }
+   
+
+];
+
+let index = 0;
+
+const indicatorsContainer = document.getElementById("carousel-indicators");
+
+// Create indicator dots
+slides.forEach((_, i) => {
+    const dot = document.createElement("div");
+    dot.className = "w-3 h-3 rounded-full bg-white/40 transition-all duration-300 cursor-pointer";
+    dot.dataset.index = i;
+    indicatorsContainer.appendChild(dot);
+
+    dot.addEventListener("click", () => {
+        index = i - 1; // Adjust so next updateSlide() shows correct slide
+        updateSlide();
+    });
+});
+
+function updateIndicators() {
+    const dots = indicatorsContainer.children;
+    [...dots].forEach((dot, i) => {
+        dot.className =
+            i === index
+                ? "w-3 h-3 rounded-full bg-white transition-all duration-300"
+                : "w-3 h-3 rounded-full bg-white/40 transition-all duration-300";
+    });
+}
+
+function updateSlide() {
+    const carouselDiv = document.querySelector(".image-carousel");
+    const titleEl = document.getElementById("carousel-title");
+    const textEl = document.getElementById("carousel-text");
+
+    // Fade out
+    carouselDiv.style.opacity = 0;
+    titleEl.style.opacity = 0;
+    textEl.style.opacity = 0;
+
+    setTimeout(() => {
+        index = (index + 1) % slides.length;
+
+        carouselDiv.style.backgroundImage = `url('${slides[index].img}')`;
+        titleEl.textContent = slides[index].title;
+        textEl.textContent = slides[index].text;
+
+        // Fade in
+        carouselDiv.style.opacity = 1;
+        titleEl.style.opacity = 1;
+        textEl.style.opacity = 1;
+
+        updateIndicators();
+    }, 800);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const carouselDiv = document.querySelector(".image-carousel");
+    carouselDiv.style.backgroundImage = `url('${slides[0].img}')`;
+    updateIndicators();
+
+    setInterval(updateSlide, 5000);
+});
+
+// shop carousel///
+
+// <script>
+//   var swiper = new Swiper(".myProductSwiper", {
+//     slidesPerView: 1,
+//     spaceBetween: 20,
+//     loop: true,
+    
+//     breakpoints: {
+//       768: { slidesPerView: 2 },
+//       1024: { slidesPerView: 3 }
+//     },
+
+//     navigation: {
+//       nextEl: ".swiper-button-next",
+//       prevEl: ".swiper-button-prev",
+//     },
+
+//     pagination: {
+//       el: ".swiper-pagination",
+//       clickable: true,
+//     },
+//   });
+
+  var swiper = new Swiper(".myProductSwiper", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+
+    autoplay: {
+      delay: 3000,   // 3 seconds
+      disableOnInteraction: false,  
+    },
+    
+    breakpoints: {
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 }
+    },
+
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+
+
+// </script>
+
+
+    </script>
+</body>
+</html>

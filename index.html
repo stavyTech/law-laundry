@@ -23,6 +23,14 @@
             transform: translateY(-5px);
             transition: all 0.3s ease;  
         }
+        /* Mobile menu animated open/close (keeps UI unchanged) */
+        #mobile-menu {
+            transition: transform .28s cubic-bezier(.2,.8,.2,1), opacity .22s ease;
+            transform-origin: top center;
+            will-change: transform, opacity;
+        }
+        #mobile-menu.open { transform: translateY(0); opacity: 1; }
+        #mobile-menu.closing { transform: translateY(-12px); opacity: 0; }
         .cart-btn:hover {
             background-color:aliceblue;
             color: white;
@@ -33,17 +41,79 @@
 .bubble {
     position: absolute;
     background: skyblue;
-    /* background: rgba(255, 255, 255, 0.65); */
     border-radius: 50%;
     backdrop-filter: blur(3px);
-    animation: floatUp s infinite ease-in-out;
-   
+    will-change: transform, opacity;
+    /* default: gentle foam (rises slowly and fades) */
+    animation: floatUp 6s infinite ease-in-out;
 }
 
+.bubble-foam {
+    animation: floatUp 5.5s infinite ease-in-out;
+    background: rgba(255,255,255,0.85);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+.bubble-drop {
+    /* water drop: falls faster and linearly */
+    animation: dropDown 1.6s linear infinite;
+    background: rgba(135,206,250,0.95);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    border-radius: 40%;
+}
+
+.bubble-small { width: 10px; height: 10px; opacity: 0.95; }
+
+/* Slight horizontal bias per group */
+.bubble.left { --sx: -20px; }
+.bubble.center { --sx: 0px; }
+.bubble.right { --sx: 20px; }
+
 @keyframes floatUp {
-    0% { transform: translateY(0) scale(1); opacity: 1; }
-    50% { transform: translateY(-25px) scale(1.15); opacity: 0.85; }
-    100% { transform: translateY(-60px) scale(1); opacity: 0; }
+    0% { transform: translateY(0) scale(1) translateX(0); opacity: 1; }
+    30% { transform: translateY(-20px) scale(1.05) translateX(5px); opacity: 0.9; }
+    60% { transform: translateY(-45px) scale(1.02) translateX(-5px); opacity: 0.6; }
+    100% { transform: translateY(-90px) scale(1) translateX(var(--sx)); opacity: 0; }
+}
+
+@keyframes dropDown {
+    0% { transform: translateY(-30px) scale(0.95) translateX(0); opacity: 1; }
+    70% { transform: translateY(400px) scale(0.8) translateX(var(--sx)); opacity: 0.6; }
+    100% { transform: translateY(520px) scale(0.6) translateX(calc(var(--sx) * 1.2)); opacity: 0; }
+}
+
+/* Springy multi-axis movement (up/down + left/right + center) */
+.bubble-spring {
+    animation: springMove var(--dur, 4s) infinite ease-in-out;
+    background: rgba(173,216,230,0.9);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.09);
+}
+
+@keyframes springMove {
+    0% {
+        transform: translate3d(0,0,0) scale(1);
+        opacity: 1;
+    }
+    20% {
+        transform: translate3d(12px,-18px,0) scale(1.05);
+        opacity: 0.95;
+    }
+    40% {
+        transform: translate3d(-10px,8px,0) scale(0.98);
+        opacity: 0.9;
+    }
+    60% {
+        transform: translate3d(18px,12px,0) scale(1.02);
+        opacity: 0.85;
+    }
+    80% {
+        transform: translate3d(-8px,-10px,0) scale(0.99);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate3d(0,0,0) scale(1);
+        opacity: 0;
+    }
 }
     
 
@@ -72,7 +142,7 @@
                             <!-- <a href="index.html" class="text-blue-500 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium" style="color:black;">Home</a> -->
                              <li class="flex items-center space-x-1">
                               <i data-feather="info" style="color: skyblue;"></i>
-                              <a href="#about" class="hover:text-blue-500  text-gray-700 hover:text-blue-500 px-0 py-0 rounded-md text-sm font-medium " >About Us</a>
+                              <a href="about.html" class="hover:text-blue-500  text-gray-700 hover:text-blue-500 px-0 py-0 rounded-md text-sm font-medium " >About Us</a>
                         </li>
                             <!-- <a href="menu.html" class="text-gray-700 hover:text-gray-500 px-3 py-2 rounded-md text-sm font-medium" style="color: black;">About us</a> -->
                       
@@ -86,9 +156,9 @@
                         </button>
     </li>
     <div class="absolute top-full left-0 w-48 bg-white shadow-lg rounded-lg p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                            <a href="#bag.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Bags</a>
+                            <a href="bag.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Bags</a>
                             <a href="shoe.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Shoes</a>
-                            <a href="#clothe.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Clothes</a>
+                            <a href="clothe.html" class="block px-4 py-2 hover:bg-gray-100 rounded">Clothes</a>
                               <a href="perfume.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Perfumes</a>
                             
                         </div>
@@ -122,10 +192,10 @@
                     </div>
                 </div>
                 <div class="-mr-2 flex md:hidden">
-                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-500 focus:outline-none" style="color: black;">
-                        <i data-feather="menu"></i>
-                    </button>
-                </div>
+                        <button type="button" id="mobile-menu-button" aria-controls="mobile-menu" aria-expanded="false" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-500 focus:outline-none" style="color: black;">
+                            <i data-feather="menu"></i>
+                        </button>
+                    </div>
             </div>
         </div>
         <!-- Mobile menu -->
@@ -183,19 +253,21 @@
 <section class="relative h-[65vh] flex items-center justify-center text-white overflow-hidden">
 
     <!-- Washing Bubbles Left -->
-<span class="bubble" style="width: 22px; height: 22px; top: 20%; left: -10px; animation-delay: .2s;"></span>
-<span class="bubble" style="width: 18px; height: 18px; top: 40%; left: -15px; animation-delay: 1.4s;"></span>
-<span class="bubble" style="width: 28px; height: 28px; top: 65%; left: -8px; animation-delay: .9s;"></span>
 
-<!-- Washing Bubbles Center -->
-<span class="bubble" style="width: 14px; height: 14px; top: 18%; left: 45%; animation-delay: .5s;"></span>
-<span class="bubble" style="width: 26px; height: 26px; top: 55%; left: 48%; animation-delay: 1.8s;"></span>
-<span class="bubble" style="width: 20px; height: 20px; top: 72%; left: 50%; animation-delay: 2.4s;"></span>
+<!-- Washing Bubbles Left (mix of drops and foam) -->
+<span class="bubble bubble-drop left" style="width: 22px; height: 22px; top: 20%; left: -10px; animation-delay: .2s;"></span>
+<span class="bubble bubble-drop left" style="width: 18px; height: 18px; top: 40%; left: -15px; animation-delay: 1.4s;"></span>
+<span class="bubble bubble-foam left" style="width: 28px; height: 28px; top: 65%; left: -8px; animation-delay: .9s;"></span>
 
-<!-- Washing Bubbles Right -->
-<span class="bubble" style="width: 25px; height: 25px; top: 12%; right: -10px; animation-delay: 0s;"></span>
-<span class="bubble" style="width: 16px; height: 16px; top: 35%; right: -15px; animation-delay: 1s;"></span>
-<span class="bubble" style="width: 30px; height: 30px; top: 70%; right: -8px; animation-delay: 2s;"></span>
+<!-- Washing Bubbles Center (gentle foam + occasional drop) -->
+<span class="bubble bubble-foam center" style="width: 14px; height: 14px; top: 18%; left: 45%; animation-delay: .5s;"></span>
+<span class="bubble bubble-foam center" style="width: 26px; height: 26px; top: 55%; left: 48%; animation-delay: 1.8s;"></span>
+<span class="bubble bubble-drop center" style="width: 20px; height: 20px; top: 72%; left: 50%; animation-delay: 2.4s;"></span>
+
+<!-- Washing Bubbles Right (drops + foam) -->
+<span class="bubble bubble-drop right" style="width: 25px; height: 25px; top: 12%; right: -10px; animation-delay: 0s;"></span>
+<span class="bubble bubble-drop right" style="width: 16px; height: 16px; top: 35%; right: -15px; animation-delay: 1s;"></span>
+<span class="bubble bubble-foam right" style="width: 30px; height: 30px; top: 70%; right: -8px; animation-delay: 2s;"></span>
 
 
     <!-- Background Carousel -->
@@ -292,24 +364,24 @@ Fresh Clothes, Zero Stress
 
 
     <section class="py-20 bg-white">
-    <div class="container mx-auto px-6">
- <span class="bubble" style="width: 25px; height: 25px; top: 10%; right: 20%; animation-delay: 0s;"></span>
-    <span class="bubble" style="width: 15px; height: 15px; top: 25%; right: 5%; animation-delay: 1s;"></span>
-    <span class="bubble" style="width: 20px; height: 20px; top: 40%; right: 15%; animation-delay: 2s;"></span>
-    <span class="bubble" style="width: 18px; height: 18px; top: 60%; right: 10%; animation-delay: 3s;"></span>
-    <span class="bubble" style="width: 30px; height: 30px; top: 75%; right: 25%; animation-delay: 1.5s;"></span>
+     <div class="container mx-auto px-6">
+ <span class="bubble bubble-foam right" style="width: 25px; height: 25px; top: 10%; right: 20%; animation-delay: 0s;"></span>
+     <span class="bubble bubble-drop right bubble-small" style="width: 15px; height: 15px; top: 25%; right: 5%; animation-delay: 1s;"></span>
+     <span class="bubble bubble-foam right" style="width: 20px; height: 20px; top: 40%; right: 15%; animation-delay: 2s;"></span>
+     <span class="bubble bubble-drop right bubble-small" style="width: 18px; height: 18px; top: 60%; right: 10%; animation-delay: 3s;"></span>
+     <span class="bubble bubble-foam right" style="width: 30px; height: 30px; top: 75%; right: 25%; animation-delay: 1.5s;"></span>
         <h2 class="text-3xl font-bold text-center mb-16 font-laila" style="color: skyblue;">
             SHOP OUR PRODUCTS
         </h2>
 
         <!-- Swiper Container -->
         <div class="swiper myProductSwiper">
-            <div class="swiper-wrapper">
- <span class="bubble" style="width: 25px; height: 25px; top: 10%; right: 20%; animation-delay: 0s;"></span>
-    <span class="bubble" style="width: 15px; height: 15px; top: 25%; right: 5%; animation-delay: 1s;"></span>
-    <span class="bubble" style="width: 20px; height: 20px; top: 40%; right: 15%; animation-delay: 2s;"></span>
-    <span class="bubble" style="width: 18px; height: 18px; top: 60%; right: 10%; animation-delay: 3s;"></span>
-    <span class="bubble" style="width: 30px; height: 30px; top: 75%; right: 25%; animation-delay: 1.5s;"></span>
+                <div class="swiper-wrapper">
+ <span class="bubble bubble-foam right" style="width: 25px; height: 25px; top: 10%; right: 20%; animation-delay: 0s;"></span>
+     <span class="bubble bubble-drop right bubble-small" style="width: 15px; height: 15px; top: 25%; right: 5%; animation-delay: 1s;"></span>
+     <span class="bubble bubble-foam right" style="width: 20px; height: 20px; top: 40%; right: 15%; animation-delay: 2s;"></span>
+     <span class="bubble bubble-drop right bubble-small" style="width: 18px; height: 18px; top: 60%; right: 10%; animation-delay: 3s;"></span>
+     <span class="bubble bubble-foam right" style="width: 30px; height: 30px; top: 75%; right: 25%; animation-delay: 1.5s;"></span>
                 <!-- Slide 1 -->
                 <div class="swiper-slide">
                     <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
@@ -561,37 +633,36 @@ Fresh Clothes, Zero Stress
 
 
 <div class="buble-container d-flex" style="display: flex;">
-     <div class="relative" data-aos="fade-right">
+    <div class="relative" data-aos="fade-right">
 
-    <!-- Washing Bubbles -->
-    <span class="bubble" style="width: 25px; height: 25px; top: 10%; right: 20%; animation-delay: 0s;"></span>
-    <span class="bubble" style="width: 15px; height: 15px; top: 25%; right: 5%; animation-delay: 1s;"></span>
-    <span class="bubble" style="width: 20px; height: 20px; top: 40%; right: 15%; animation-delay: 2s;"></span>
-    <span class="bubble" style="width: 18px; height: 18px; top: 60%; right: 10%; animation-delay: 3s;"></span>
-    <span class="bubble" style="width: 30px; height: 30px; top: 75%; right: 25%; animation-delay: 1.5s;"></span>
-    <span class="bubble" style="width: 25px; height: 25px; top: 10%; right: 20%; animation-delay: 0s;"></span>
-    <span class="bubble" style="width: 15px; height: 15px; top: 25%; right: 5%; animation-delay: 1s;"></span>
-    <span class="bubble" style="width: 20px; height: 20px; top: 40%; right: 15%; animation-delay: 2s;"></span>
-    <span class="bubble" style="width: 18px; height: 18px; top: 60%; right: 10%; animation-delay: 3s;"></span>
-    <span class="bubble" style="width: 30px; height: 30px; top: 75%; right: 25%; animation-delay: 1.5s;"></span>
+    <!-- Washing Bubbles (cluster A) -->
+    <span class="bubble bubble-foam right" style="width: 25px; height: 25px; top: 10%; right: 20%; animation-delay: 0s;"></span>
+    <span class="bubble bubble-drop right bubble-small" style="width: 15px; height: 15px; top: 25%; right: 5%; animation-delay: 1s;"></span>
+    <span class="bubble bubble-foam right" style="width: 20px; height: 20px; top: 40%; right: 15%; animation-delay: 2s;"></span>
+    <span class="bubble bubble-drop right bubble-small" style="width: 18px; height: 18px; top: 60%; right: 10%; animation-delay: 3s;"></span>
+    <span class="bubble bubble-foam right" style="width: 30px; height: 30px; top: 75%; right: 25%; animation-delay: 1.5s;"></span>
+    <span class="bubble bubble-foam center" style="width: 25px; height: 25px; top: 10%; right: 20%; animation-delay: 0s;"></span>
+    <span class="bubble bubble-drop center bubble-small" style="width: 15px; height: 15px; top: 25%; right: 5%; animation-delay: 1s;"></span>
+    <span class="bubble bubble-foam center" style="width: 20px; height: 20px; top: 40%; right: 15%; animation-delay: 2s;"></span>
+    <span class="bubble bubble-drop left bubble-small" style="width: 18px; height: 18px; top: 60%; right: 10%; animation-delay: 3s;"></span>
+    <span class="bubble bubble-foam left" style="width: 30px; height: 30px; top: 75%; right: 25%; animation-delay: 1.5s;"></span>
 
     <!-- Date box -->
    
 </div>
-  <div class="relative" data-aos="fade-left">
+    <div class="relative" data-aos="fade-left">
   
-
-    <!-- Washing Bubbles -->
-    <span class="bubble" style="width: 25px; height: 25px; top: 10%; right: 20%; animation-delay: 0s;"></span>
-    <span class="bubble" style="width: 15px; height: 15px; top: 25%; right: 5%; animation-delay: 1s;"></span>
-    <span class="bubble" style="width: 20px; height: 20px; top: 40%; right: 15%; animation-delay: 2s;"></span>
-    <span class="bubble" style="width: 18px; height: 18px; top: 60%; right: 10%; animation-delay: 3s;"></span>
-    <span class="bubble" style="width: 30px; height: 30px; top: 75%; right: 25%; animation-delay: 1.5s;"></span>
-    <span class="bubble" style="width: 25px; height: 25px; top: 10%; right: 20%; animation-delay: 0s;"></span>
-    <span class="bubble" style="width: 15px; height: 15px; top: 25%; right: 5%; animation-delay: 1s;"></span>
-    <span class="bubble" style="width: 20px; height: 20px; top: 40%; right: 15%; animation-delay: 2s;"></span>
-    <span class="bubble" style="width: 18px; height: 18px; top: 60%; right: 10%; animation-delay: 3s;"></span>
-    <span class="bubble" style="width: 30px; height: 30px; top: 75%; right: 25%; animation-delay: 1.5s;"></span>
+        <!-- Washing Bubbles (cluster B) -->
+        <span class="bubble bubble-foam left" style="width: 25px; height: 25px; top: 10%; right: 20%; animation-delay: 0s;"></span>
+        <span class="bubble bubble-drop left bubble-small" style="width: 15px; height: 15px; top: 25%; right: 5%; animation-delay: 1s;"></span>
+        <span class="bubble bubble-foam center" style="width: 20px; height: 20px; top: 40%; right: 15%; animation-delay: 2s;"></span>
+        <span class="bubble bubble-drop right bubble-small" style="width: 18px; height: 18px; top: 60%; right: 10%; animation-delay: 3s;"></span>
+        <span class="bubble bubble-foam right" style="width: 30px; height: 30px; top: 75%; right: 25%; animation-delay: 1.5s;"></span>
+        <span class="bubble bubble-foam center" style="width: 25px; height: 25px; top: 10%; right: 20%; animation-delay: 0s;"></span>
+        <span class="bubble bubble-drop center bubble-small" style="width: 15px; height: 15px; top: 25%; right: 5%; animation-delay: 1s;"></span>
+        <span class="bubble bubble-foam left" style="width: 20px; height: 20px; top: 40%; right: 15%; animation-delay: 2s;"></span>
+        <span class="bubble bubble-drop left bubble-small" style="width: 18px; height: 18px; top: 60%; right: 10%; animation-delay: 3s;"></span>
+        <span class="bubble bubble-foam right" style="width: 30px; height: 30px; top: 75%; right: 25%; animation-delay: 1.5s;"></span>
 
     <!-- Date box -->
    
@@ -758,12 +829,12 @@ Fresh Clothes, Zero Stress
         </div>
     </section>
 
-    <!-- Testimonial Preview -->
-      <span class="bubble" style="width: 25px; height: 25px; top: 10%; right: 20%; animation-delay: 0s;"></span>
-    <span class="bubble" style="width: 15px; height: 15px; top: 25%; right: 5%; animation-delay: 1s;"></span>
-    <span class="bubble" style="width: 20px; height: 20px; top: 40%; right: 15%; animation-delay: 2s;"></span>
-    <span class="bubble" style="width: 18px; height: 18px; top: 60%; right: 10%; animation-delay: 3s;"></span>
-    <span class="bubble" style="width: 30px; height: 30px; top: 75%; right: 25%; animation-delay: 1.5s;"></span>
+        <!-- Testimonial Preview (springy bubbles) -->
+            <span class="bubble bubble-spring right" style="width: 25px; height: 25px; top: 10%; right: 20%; --dur:5.5s; animation-delay: 0s;"></span>
+        <span class="bubble bubble-spring bubble-small center" style="width: 15px; height: 15px; top: 25%; right: 5%; --dur:4s; animation-delay: 0.6s;"></span>
+        <span class="bubble bubble-foam left" style="width: 20px; height: 20px; top: 40%; right: 15%; --dur:6s; animation-delay: 1.2s;"></span>
+        <span class="bubble bubble-drop right bubble-small" style="width: 18px; height: 18px; top: 60%; right: 10%; --dur:2.2s; animation-delay: 0.9s;"></span>
+        <span class="bubble bubble-spring left" style="width: 30px; height: 30px; top: 75%; right: 25%; --dur:7s; animation-delay: 1.5s;"></span>
     <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12" data-aos="fade-up">
@@ -927,20 +998,20 @@ Fresh Clothes, Zero Stress
         alt="Event Setup" 
         class="rounded-lg shadow-xl w-full"> -->
 
-    <!-- Washing Bubbles LEFT -->
-    <span class="bubble" style="width: 22px; height: 22px; top: 20%; left: -10px; animation-delay: .2s;"></span>
-    <span class="bubble" style="width: 18px; height: 18px; top: 40%; left: -15px; animation-delay: 1.4s;"></span>
-    <span class="bubble" style="width: 28px; height: 28px; top: 65%; left: -8px; animation-delay: .9s;"></span>
+    <!-- Washing Bubbles LEFT (footer cluster animated) -->
+    <span class="bubble bubble-spring left" style="width: 22px; height: 22px; top: 20%; left: -10px; --dur:4.5s; animation-delay: .2s;"></span>
+    <span class="bubble bubble-foam left bubble-small" style="width: 18px; height: 18px; top: 40%; left: -15px; --dur:5.4s; animation-delay: 1.4s;"></span>
+    <span class="bubble bubble-drop left" style="width: 28px; height: 28px; top: 65%; left: -8px; --dur:2s; animation-delay: .9s;"></span>
 
-    <!-- Washing Bubbles CENTER -->
-    <span class="bubble" style="width: 14px; height: 14px; top: 18%; left: 45%; animation-delay: .5s;"></span>
-    <span class="bubble" style="width: 26px; height: 26px; top: 55%; left: 48%; animation-delay: 1.8s;"></span>
-    <span class="bubble" style="width: 20px; height: 20px; top: 72%; left: 50%; animation-delay: 2.4s;"></span>
+    <!-- Washing Bubbles CENTER (footer) -->
+    <span class="bubble bubble-spring center bubble-small" style="width: 14px; height: 14px; top: 18%; left: 45%; --dur:3.6s; animation-delay: .5s;"></span>
+    <span class="bubble bubble-foam center" style="width: 26px; height: 26px; top: 55%; left: 48%; --dur:6s; animation-delay: 1.8s;"></span>
+    <span class="bubble bubble-drop center" style="width: 20px; height: 20px; top: 72%; left: 50%; --dur:2.4s; animation-delay: 2.4s;"></span>
 
-    <!-- Washing Bubbles RIGHT -->
-    <span class="bubble" style="width: 25px; height: 25px; top: 12%; right: -10px; animation-delay: 0s;"></span>
-    <span class="bubble" style="width: 16px; height: 16px; top: 35%; right: -15px; animation-delay: 1s;"></span>
-    <span class="bubble" style="width: 30px; height: 30px; top: 70%; right: -8px; animation-delay: 2s;"></span>
+    <!-- Washing Bubbles RIGHT (footer) -->
+    <span class="bubble bubble-spring right" style="width: 25px; height: 25px; top: 12%; right: -10px; --dur:5s; animation-delay: 0s;"></span>
+    <span class="bubble bubble-foam right bubble-small" style="width: 16px; height: 16px; top: 35%; right: -15px; --dur:4.2s; animation-delay: 1s;"></span>
+    <span class="bubble bubble-drop right" style="width: 30px; height: 30px; top: 70%; right: -8px; --dur:1.8s; animation-delay: 2s;"></span>
 
     <!-- Date Box -->
     
@@ -1006,11 +1077,41 @@ Fresh Clothes, Zero Stress
         // Initialize feather icons
         feather.replace();
 
-        // Mobile menu toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+        // Mobile menu animated open/close (keeps same UI)
+        (function() {
+            const btn = document.getElementById('mobile-menu-button');
             const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        });
+            if (!btn || !menu) return;
+
+            btn.addEventListener('click', function() {
+                if (menu.classList.contains('open')) {
+                    menu.classList.remove('open');
+                    menu.classList.add('closing');
+                    btn.setAttribute('aria-expanded', 'false');
+                } else {
+                    if (menu.classList.contains('hidden')) {
+                        menu.classList.remove('hidden');
+                        menu.classList.add('closing');
+                        requestAnimationFrame(() => {
+                            menu.classList.remove('closing');
+                            menu.classList.add('open');
+                        });
+                    } else {
+                        menu.classList.remove('closing');
+                        menu.classList.add('open');
+                    }
+                    btn.setAttribute('aria-expanded', 'true');
+                }
+            });
+
+            menu.addEventListener('transitionend', (e) => {
+                if (e.propertyName !== 'transform' && e.propertyName !== 'opacity') return;
+                if (menu.classList.contains('closing')) {
+                    menu.classList.remove('closing');
+                    menu.classList.add('hidden');
+                }
+            });
+        })();
 
         // Shopping cart functionality with localStorage fallback
         let cart = [];
